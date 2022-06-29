@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2022.06.29-4</title>
+    <style>
+        #container{
+            height:150vh;
+        }
+
+        #box_01 {
+            background: #e81e25;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: relative;
+            left: 50%;
+        }
+
+        #box_02 {
+            background: #fe7773;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: absolute;
+            /*top:0;*/
+            left: 100px;
+        }
+
+
+        #box_03 {
+            background: #632a7e;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            position: fixed;
+            top: 10px;
+            right:10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="box_01"></div>
+        <div id="box_02">
+            <div id="box_03"></div>
+        </div>
+    </div>
+</body>
+
+</html>

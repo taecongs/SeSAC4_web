@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2022.06.29-3</title>
+    <style>
+        #container{
+            width:100%;
+        }
+
+        h1 {
+            color: red;
+        }
+
+        h2 {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        h3 {
+            color: green;
+            text-decoration: overline;
+        }
+
+        h4 {
+            color: yellowgreen;
+            text-shadow: 3px 1px 1px #000;
+        }
+
+        h5 {
+            color: blueviolet;
+        }
+
+        h6 {
+            color: aqua;
+        }
+
+        .sp_txt {
+            color: orange;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        hr {
+            border: 10px;
+            border-style: dotted;
+        }
+
+        p {
+            background: #85B8CB;
+            color: #fff;
+            padding: 20px;
+        }
+
+        img{
+            width:100px;
+            height:100px;
+            cursor:pointer;
+        }
+
+        .tag_name{
+            background:#e00012;
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            border:3px solid #000;
+        }
+
+        .tag_name:hover{
+            background:blue;
+        }
+
+        .tag_name:active{
+            background:yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- h1 + h2 : h1다음에 오는 h2 한 개 -->
+    <!-- h1 ~ h2 : h1 다음에 오는 h2 전체 선택 -->
+    <div id="container">
+        <h1>제목1</h1>
+        <h2>제목2</h2>
+        <h3>제목3</h3>
+        <h4>제목4</h4>
+        <h5>제목5</h5>
+        <h6>제목6</h6>
+
+        <span class="sp_txt">span 태그입니다.</span>
+        <hr>
+        <p>p 태그입니다.</p>
+        <img src="./image/img-01.jpg" width="100%" alt="">
+        <div class="tag_name"></div>
+
+        <input type="text">
+    </div>
+</body>
+
+</html>
