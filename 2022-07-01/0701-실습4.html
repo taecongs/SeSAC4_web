@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자바스크립트 실습 (1)</title>
+    <script>
+            var no_1 = 150;
+            var no_2 = 100;
+            var no_3 = 50;
+
+        function add(){
+            result = no_1 + no_2 + no_3;
+            alert(result);
+        }        
+        add();
+
+
+        function sub(){
+            result2 = no_1 - no_2;         
+            alert(`${no_1} 과 ${no_2} 의 차이는 ${result2} 입니다.`);
+        }
+
+        sub();
+
+        function divide(){
+            result3 = no_1 / no_2;
+            alert(result3);
+        }
+
+        divide();
+
+
+        function mul(){
+            result4 = no_1 * no_2;
+            alert(result4);
+        }
+
+        mul();
+
+        function addButton(x, y){
+            alert(x + y);
+        }
+
+    </script>
+</head>
+
+<body>
+    <button type="button" onclick="addButton(4,5);">버튼</button>
+    <br><br>
+    <a href="javascript:addButton(1,2)">a 태그</a>
+</body>
+</html>
