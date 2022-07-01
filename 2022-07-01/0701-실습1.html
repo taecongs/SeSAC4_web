@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>transform 과 z-index 를 이용해 이미지 2개 연달아 나열하기</title>
+    <style>
+        #container{
+            width:100%;
+            margin:0 auto;
+            text-align: center;
+            background:#ddd;
+            height:500px;
+
+        }
+
+
+        .box_01 {
+            transform: skew(0, 20deg);
+            position:relative;
+            display:inline-block;
+            left:70px;
+            top:150px;
+            z-index:999;
+        }
+
+        .box_02{
+            display:inline-block;
+            transform: skew(0, 20deg);            
+            position:relative;
+            top:150px;
+            z-index:2;
+        }
+
+        .box_03{
+            display:inline-block;
+            transform: skew(0, 20deg);  
+            position:relative;
+            left:-70px;    
+            top:130px;   
+            z-index:1;   
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box_01">
+            <img src="./image/01.png" width="300px;" alt="img_01">
+        </div>
+
+        <div class="box_02">
+            <img src="./image/01.png" width="300px;" alt="img_01">
+        </div>
+
+        <div class="box_03">
+            <img src="./image/01.png" width="300px;" alt="img_01">
+        </div>
+    </div>
+</body>
+
+</html>
