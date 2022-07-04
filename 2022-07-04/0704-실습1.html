@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document - 실습</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <label for="value_1">값1 :</label>
+    <input type="text" id="value_1"><br>
+
+    <label for="value_2">값2 :</label>
+    <input type="text" id="value_2"><br>
+
+    <label for="cal">연산자 :</label>
+    <input type="text" id="cal"><br>
+
+    <label for="result">결과 :</label>
+    <input type="text" id="result"><br><br>
+
+
+    <button type="button" onclick="calBtn();">계산하기</button>
+    <button type="button" onclick="resetBtn();">초기화</button>
+
+
+    <script>
+        function calBtn(){
+            let $value1 = Number(document.getElementById('value_1').value);
+            let $value2 = Number(document.getElementById('value_2').value);
+            let $cal = document.getElementById('cal').value;
+            let $result = document.getElementById('result');
+
+            if($cal == '+'){
+                $result.value = $value1 + $value2;
+            } else if($cal == '-'){
+                $result.value = $value1 - $value2;
+            } else if($cal == '*'){
+                $result.value = $value1 * $value2;                
+            } else if($cal == '/'){
+                $result.value = $value1 / $value2;                 
+            } 
+             
+        }
+
+        function resetBtn(){
+            window.location.reload();
+        }
+    </script>    
+</body>
+</html>

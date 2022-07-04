@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document - 실습2</title>
+    <style>
+        label{
+            width:55px;
+            display:inline-block;
+        }
+    </style>
+</head>
+<body>   
+    <p>방명록입니다.</p>
+
+    <label for="user" style="font-weight:600;">작성자</label>
+    <input type="text" id="user">
+    
+    <br>
+
+    <label for="content" style="font-weight:600;">내용</label>
+    <input type="text" id="content" style="width:44.8%;">
+    
+    <br><br>
+
+    <button type="button" onclick="writeBtn();">작성하기</button>
+    <button type="button" onclick="resetBtn();">리셋하기</button>
+
+    <br><br>
+
+    <table border="1" id="table_box" width="50%;">
+        <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+        <tbody id="my-tbody"></tbody>
+    </table>
+
+
+    <script>
+        let $now;
+
+        function time(){
+            $now = new Date();
+            $now_time = $now.toLocaleString();
+
+        }
+
+        function writeBtn(){
+            time();
+            let $table = document.querySelector('#table_box');
+            let $tbody = document.getElementById('my-tbody');
+            let $row = $tbody.insertRow($tbody.rows.length);
+            let $rowCount = $table.rows.length - 1;
+
+
+            let $cel1 = $row.insertCell(0);
+            let $cel2 = $row.insertCell(1);
+            let $cel3 = $row.insertCell(2);
+            let $cel4 = $row.insertCell(3);
+
+            $cel1.innerText = $rowCount;
+            $cel2.innerText = document.getElementById('user').value;
+            $cel3.innerText = document.getElementById('content').value;
+            $cel4.innerText = $now_time;
+
+        }
+
+
+        function resetBtn(){
+            window.location.reload();
+        }
+    </script>    
+</body>
+</html>

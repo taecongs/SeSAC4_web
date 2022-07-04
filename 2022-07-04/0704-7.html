@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document - 요소 다루기2</title>
+    <style>
+        div{
+            background:yellowgreen;
+        }
+
+        p{
+            background:skyblue;
+        }
+
+        .text{
+            color:#e00012;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <div id="div2">div2</div>
+    <br>
+    <button type="button" onclick="addNode()">삽입</button>
+    <button type="button" onclick="change()">변경</button>
+    <button type="button" onclick="removeNode()">삭제</button>
+
+    <script>
+        function addNode(){
+            let p1 = document.createElement('p');
+            let div1 = document.getElementById('div1');
+
+            p1.innerText = 'p태그입니다.';
+            p1.className = 'text';
+            p1.style = 'text-align:center';
+
+            let img = document.createElement('img');
+            img.src = './image/logo-1.png';
+            img.width = 100;
+
+            div1.appendChild(img);
+            div1.appendChild(p1);                   // 부모요소 안에 자식요소를 넣는다. - appendChild() 
+
+        }
+
+
+        function change(){
+
+        }
+
+
+
+        function removeNode(){
+            let div1 = document.getElementById('div1');
+            let child = document.getElementsByClassName('text');
+
+
+            /*div1.removeChild(child[0]);        //  부모를 지정한 후 삭제하는 방법 - [] 한개씩 삭제를 해야한다.*/
+
+            child[0].remove();                // 자기 자신이 삭제하는 방법
+        }
+
+    </script>    
+</body>
+</html>
