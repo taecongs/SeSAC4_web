@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>객체란? - 객체 리터럴, 배열</title>
+    <script>
+        /* 기본 자료형 - 다른 변수에 값을 할당하거나 함수 인자를 넘길 때 값을 복사해 전달 */
+        /* 객체 자료형 - 값을 복사해 전달하는 것이 아닌 메모리 주소를 복사, 같은 객체를 참조할 뿐 */
+
+        /* 객체 리터럴 */
+        let cat = {
+            name : '나비',
+            age : 1,
+            mew : function(){
+                return '야옹';
+            }
+        };
+
+        console.log(cat);
+        console.log(cat.name);
+        console.log(cat.mew());
+
+
+        
+        /* 객체 리터럴 2 */
+        let me = {
+            name : 'kyuri',
+            birth : '1115'
+        };
+
+        me.hobby = 'baseball';
+        me['gender'] = 'F';
+
+        console.log(me);
+
+
+
+        /* 기본 자료형 - 다른 변수에 값을 할당하거나 함수 인자를 넘길 때 값을 복사해 전달 */
+        let a = 1;
+        let b = a;
+        console.log('a :', a);                 // 1
+        console.log('b :', b);                 // 1
+
+        a = 10;
+        console.log('a :', a);                // 10
+        console.log('b :', b);                // 1
+
+
+
+        /* 객체 자료형 - 값을 복사해 전달하는 것이 아닌 메모리 주소를 복사, 같은 객체를 참조할 뿐 */
+        let num = [1,2,3,4,5];
+        let num2 = num;
+
+        console.log('num :', num);            // [1,2,3,4,5]
+        console.log('num2 :', num2);          // [1,2,3,4,5]
+
+        num.pop();
+        console.log('num :', num);           // [1,2,3,4]
+        console.log('num2 :', num2);         // [1,2,3,4]
+
+        console.log(typeof(num));            // object
+
+
+
+        /* 배열 */
+        let arr = [1, 2, 3, '안녕', '반가워'];
+        
+        console.log(arr.length);     // 배열의 길이
+        
+        arr.push('New');            // 배열 맨 뒤에 새로 추가
+        console.log(arr); 
+
+        arr.pop();                 // 배열 맨 뒤에 삭제
+        console.log(arr);
+
+        arr.unshift('Body');        // 배열 맨 앞에 새로 추가
+        console.log(arr);
+
+        arr.shift();               // 배열 맨 앞에 삭제
+        console.log(arr);
+
+        console.log(arr.indexOf('안녕'));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

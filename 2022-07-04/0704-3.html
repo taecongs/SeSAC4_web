@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math 객체</title>
+    <script>
+        console.log(Math.min());                   // Infinity
+        console.log(Math.min(1, 2));               // 1  (최소값을 구하는 방식)
+        console.log(Math.min(-10, 2, '문자'));     // NaN (비교할 수 없는 값이 섞여 있다면 NaN)
+
+        console.log(Math.random());                // 0보다는 크고 1보다는 작은 랜덤의 숫자 출력
+
+        let max = 20;
+        let min = 10;
+        console.log(Math.random() * (max - min) + min);      // (큰값 - 작은값) + 작은값
+
+
+        console.log(Math.round(-10.9));    // -11 (반올림)
+        console.log(Math.round(11.1));     //  11 (반올림)
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
