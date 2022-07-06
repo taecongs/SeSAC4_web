@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./js/jquery-ui-1.13.1.custom/jquery-ui.css" />
+    <title>실습 - 클래스 바꾸기 1</title>
+
+    <script>
+        function changeColor(){
+            if($('div').hasClass('box_1')){
+                $('div').switchClass('box_1', 'box_2', 500);
+            } else if($('div').hasClass('box_2')){
+                $('div').switchClass('box_2', 'box_3', 500);
+            } else if($('div').hasClass('box_3')){
+                $('div').switchClass('box_3', 'box_4', 500);
+            } else if($('div').hasClass('box_4')){
+                $('div').switchClass('box_4', 'box_5', 500);
+            } else if($('div').hasClass('box_5')){
+                $('div').switchClass('box_5', 'box_6', 500);
+            } else if($('div').hasClass('box_6')){
+                $('div').switchClass('box_6', 'box_7', 500);
+            } else if($('div').hasClass('box_7')){
+                $('div').switchClass('box_7', 'box_1', 500);
+            } 
+        }
+    </script>
+
+    <style>
+        .box_1{
+            width:200px;
+            height:200px;
+            background:red;
+        }
+
+        .box_2{
+            width:200px;
+            height:200px;
+            background:orange;
+        }
+        
+        .box_3{
+            width:200px;
+            height:200px;
+            background:yellow;
+        }
+
+        .box_4{
+            width:200px;
+            height:200px;
+            background:green;
+        }
+
+        .box_5{
+            width:200px;
+            height:200px;
+            background:blue;
+        }
+
+        .box_6{
+            width:200px;
+            height:200px;
+            background:navy;
+        }
+
+        .box_7{
+            width:200px;
+            height:200px;
+            background:purple;
+        }
+    </style>
+</head>
+<body>
+    <div class="box_1" onclick="changeColor();"></div>
+</body>
+</html>

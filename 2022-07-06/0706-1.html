@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>jQuery 메서드 - val()</title>
+
+    <script>
+        function setValue(){
+            /* document.getElementById('input1').value = '~~'; */      
+            /* 값 가져오기  */
+            $('#input1').val('setting');       
+        }
+
+        function getValue(){
+            /*alert(document.getElementById('input1').value);*/
+            /* 값 설정하기  */
+            alert($('#input1').val());
+        }
+    </script>
+    <title>jQuery</title>
+</head>
+<body>
+    <label for="input1"></label>
+    <input type="text" id="input1">
+
+    <button type="button" onclick="setValue();">setValue</button>
+    <button type="button" onclick="getValue();">getValue</button>
+</body>
+</html>

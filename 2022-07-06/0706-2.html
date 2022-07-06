@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>jQuery - Style 변경하기 & Text 변경하기 & 속성 변경하기 & HTML 변경하기</title>
+
+    <script>
+        /* Style 변경하기 */
+        function changeStyle(){
+            let span = document.querySelector('span');
+            /*span.style = 'font-size:20px; color:#e00012;';*/
+            $('span').css('font-size', '24px');
+            $('span').css('color', 'yellowgreen');
+        }
+
+
+        /* Text 변경하기 */
+        function changeText(){
+            let $span = document.querySelector('span');
+            /*$span.innerText = 'javascript!!!';*/
+            $($span).text('jQuery!!!');
+        }
+
+
+        /* 속성 변경하기 */
+        function changeAttribute(){
+            /*let img = document.querySelector('img');*/
+            /*img.width = '100';*/
+            $('img').attr('width', '100');
+        }
+
+
+        /* HTML 변경하기 */
+        function changeHTML(){
+            let p = document.querySelector('p');
+            p.innerText = '<h1> 반가워요 </h1>';        // 글자로 그대로 보여짐
+            p.innerHTML = '<h1> 반가워요 </h1>';        // HTML 요소로 인식
+            
+            $('p').html('<h3>이게 무슨일인가?</h3>');
+        }
+    </script>
+    <title>jQuery</title>
+</head>
+<body>
+    <span>안녕</span>
+    <img src = "">
+    <button type="button" onclick="changeStyle();">changeStyle</button>
+    <button type="button" onclick="changeText();">changeText</button>
+    <button type="button" onclick="changeAttribute();">changeAttribute</button>
+    <p style="background:yellowgreen;">p태그</p>
+    <button type="button" onclick="changeHTML();">changeHTML</button>
+</body>
+</html>

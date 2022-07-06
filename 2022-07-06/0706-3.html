@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>jQuery - 요소 추가 & 요소 탐색 & 요소 삭제</title>
+
+    <script>
+        /* 요소 추가*/
+        function appendBtn(){
+            let $li = document.createElement('li');
+            $li.innerText = 'append';
+
+             // 부모요소에 자식요소를 마지막에 추가한다.
+            /*document.querySelector('ul').appendChild($li); */
+            $('ul').append($li);
+        }
+
+
+        function prependBtn(){
+            let $li = document.createElement('li');
+            $li.innerText = 'append';
+
+            // 부모요소에 자식요소를 맨 앞에 추가한다.
+            $('ul').prepend($li);
+        }
+
+
+        function beforeBtn(){
+            let $li = document.createElement('li');
+            $li.innerText = 'before';
+
+            // 선택한 요소 앞에 추가 한다.
+            $('#li_2').before($li);
+        }
+
+        function afterBtn(){
+            let $li = document.createElement('li');
+            $li.innerText = 'after';
+
+            // 선택한 요소 뒤에 추가 한다.
+            $('#li_2').after($li);
+        }
+
+
+
+        /* 요소 탐색 */
+        function searchBtn(){
+            // 선택한 요소의 부모 요소를 선택 한다.
+            console.log($('#li_2').parent());
+
+            // 특정한 요소의 바로 다음 형제를 가져 온다.
+            console.log($('#li_2').next());
+
+            // ul의 자식들을 전부 가져 온다.
+            console.log($('ul').children());
+        }
+
+
+        /* 요소 삭제 */
+        function removeElementBtn(){
+
+            // 선택한 특정 요소만 삭제 한다.
+            $('#li_2').remove();
+        } 
+
+        function emptyElementBtn(){
+            // ul 태그 안에 있는 모든 하위 요소를 삭제 한다.
+            $('ul').empty();
+        }
+    </script>
+    <title>jQuery</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li id="li_2">2</li>
+        <li id="li_3">3</li>
+    </ul>
+
+    <button type="button" onclick="appendBtn();">append</button>
+    <button type="button" onclick="prependBtn();">prepend</button>
+    <button type="button" onclick="beforeBtn();">before</button>
+    <button type="button" onclick="afterBtn();">after</button>
+    <button type="button" onclick="searchBtn();">search</button>
+    <button type="button" onclick="removeElementBtn();">remove</button>
+    <button type="button" onclick="emptyElementBtn();">empty</button>
+</body>
+</html>

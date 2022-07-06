@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width:50px;
+            display:inline-block;
+        }
+
+        #table_box{
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+    <p>방명록입니다.</p>
+
+    <label for="user_txt">작성자</label>
+    <input type="text" id="user_txt">
+
+    <br>
+
+    <label for="content_txt">내용</label>
+    <input type="text" id="content_txt" style="width:45%;">
+
+    <br><br>
+
+    <button type="button" onclick="writeBtn();">작성</button>
+
+    <br><br>
+
+    <table id="table_box" border="1" cellpadding="5" style="width:52%;">
+        <tr>
+            <th>번호</th>
+            <th>작성자</th>
+            <th>내용</th>
+            <th>작성일</th>
+        </tr>
+    </table>
+
+    <script>
+        function writeBtn(){
+            let $user = document.getElementById('user_txt');
+            let $content = document.getElementById('content_txt');
+            
+            /* table 관련 정의 */
+            let $table = document.getElementById('table_box');
+            let $rowCount = $table.rows.length - 1;
+
+            let $tr = document.createElement('tr');
+            let $td_1 = document.createElement('td');
+            let $td_2 = document.createElement('td');
+            let $td_3 = document.createElement('td');
+            let $td_4 = document.createElement('td');
+
+            
+            let $now = new Date();
+
+
+            if($rowCount < $table.rows.length){
+                $table.appendChild($tr);
+                $tr.appendChild($td_1).innerText = $rowCount + 1;
+                $tr.appendChild($td_2).innerText = $user.value;
+                $tr.appendChild($td_3).innerText = $content.value;
+                $tr.appendChild($td_4).innerText = $now.getFullYear() + '-' + ($now.getMonth() + 1) + '-' + $now.getDate() + ' ' + $now.getHours() + ':' + $now.getMinutes();
+            }
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./js/jquery-ui-1.13.1.custom/jquery-ui.css" />
+    <title>실습 - 이미지 바꾸기 1-2</title>
+
+    <script>
+        /* 사과 */
+        function appleBtn(){
+            $('img').attr('src', './image/apple_img.jpg');
+
+        }
+
+
+        /* 바나나 */
+        function bananaBtn(){
+            $('img').attr('src', './image/banana_img.jpg');           
+        }
+
+
+        /* 포도 */
+        function grapeBtn(){
+            $('img').attr('src', './image/grape_img.jpg');               
+        }
+
+
+        /* 복숭아 */
+        function peachBtn(){
+            $('img').attr('src', './image/peach.png');    
+        }
+
+
+        function change(fruit){
+            $('img').attr('src', './image' + fruit + 'jpg');
+            $('img').attr('src', './image' + fruit + 'png');
+
+            $('div').swichClass('apple', 'banana', 3000);
+        }
+        
+    </script>
+
+    <style>
+        div{
+            border:1px solid #ddd;
+            width:324px;
+            height:324px;
+            margin-bottom:20px;
+        }
+
+        button{
+            background:#000;
+            color:#fff;
+            padding:10px 20px;
+            cursor:pointer;
+        }  
+        
+        .p_txt{
+            text-align: center;
+        }
+
+        .apple{
+           /* background-image:url(./image/apple_img.jpg);
+            background-size:cover;
+            background-position:center; */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img width="324px" height="324px;">
+    </div>
+    <!--<button type="button" onclick="appleBtn();">사과</button>
+    <button type="button" onclick="bananaBtn();">바나나</button>
+    <button type="button" onclick="grapeBtn();">포도</button>
+    <button type="button" onclick="peachBtn();">복숭아</button>-->
+
+    <button type="button" onclick="change('apple');">사과</button>
+    <button type="button" onclick="change('banana');">바나나</button>
+    <button type="button" onclick="change('grape');">포도</button>
+    <button type="button" onclick="change('peach');">복숭아</button>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./js/jquery-ui-1.13.1.custom/jquery-ui.js"></script>
+    <link rel="stylesheet" href="./js/jquery-ui-1.13.1.custom/jquery-ui.css" />
+    <title>실습 - 이미지 바꾸기 1</title>
+
+    <script>
+        /* 사과 */
+        function appleBtn(){
+            $('div').html('<img src="./image/apple_img.jpg">');
+            $('img').attr('width', '324');
+            $('img').attr('height', '324');
+
+        }
+
+
+        /* 바나나 */
+        function bananaBtn(){
+            $('div').html('<img src="./image/banana_img.jpg">');
+            $('img').attr('width', '324');     
+            $('img').attr('height', '324');                  
+        }
+
+
+        /* 포도 */
+        function grapeBtn(){
+            $('div').html('<img src="./image/grape_img.jpg">');
+            $('img').attr('width', '324');     
+            $('img').attr('height', '324');  
+        }
+
+
+        /* 복숭아 */
+        function peachBtn(){
+            $('div').html('<img src="./image/peach.png">');
+            $('img').attr('width', '324');     
+            $('img').attr('height', '324');  
+        }
+        
+    </script>
+
+    <style>
+        div{
+            border:1px solid #ddd;
+            width:324px;
+            height:324px;
+            margin-bottom:20px;
+        }
+
+        button{
+            background:#000;
+            color:#fff;
+            padding:10px 20px;
+            cursor:pointer;
+        }  
+        
+        .p_txt{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="p_txt">과일 버튼을 클릭해보세요.</p>
+    </div>
+    <button type="button" onclick="appleBtn();">사과</button>
+    <button type="button" onclick="bananaBtn();">바나나</button>
+    <button type="button" onclick="grapeBtn();">포도</button>
+    <button type="button" onclick="peachBtn();">복숭아</button>
+</body>
+</html>
