@@ -1,0 +1,85 @@
+@font-face {
+    font-family: 'ROKAFSlabSerifMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts2201-3@1.0/ROKAFSlabSerifMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#container{
+    width:80%;
+    margin:0 auto;
+    padding:20px;
+    box-sizing:border-box;
+}
+
+/* 왼쪽 박스 */
+.left_box{
+    width:30%;
+    display:inline-block;
+
+}
+
+input{
+    margin-bottom:10px;
+}
+
+label{
+    font-family:'ROKAFSlabSerifMedium';
+}
+
+button{
+    background:#000;
+    color:#fff;
+    cursor:pointer;
+    font-family:'ROKAFSlabSerifMedium';
+    padding:5px 10px;
+}
+
+/* 오른쪽 박스 */
+.right_box{
+    width:60%;
+    display:inline-block;
+    position: relative;
+    top:-65px;
+    left:60px;
+
+
+}
+
+
+/* table 관련 */
+table{
+    width:100%;
+    text-align: center;
+}
+
+th{
+    font-family:'ROKAFSlabSerifMedium';
+    padding:10px 0;
+}
+
+td{
+    font-family: 'IBMPlexSansKR-Regular';      
+    padding:10px 0;      
+}
+
+.h2_txt{
+    text-align: center;
+    color:green;
+    font-family:'ROKAFSlabSerifMedium';
+}
+
+.red_txt{
+    color:red;
+}
+
+.blue_txt{
+    color:blue;
+}
