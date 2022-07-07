@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/main.css" />
+    <title>실습 - 스케줄(1)</title>
+</head>
+<body>
+    <div id="container">
+        <div class="left_box">
+            <div>
+            <label for="user_day">날짜 :</label>
+            <input type="text" id="user_day">
+            </div>
+
+            <div>
+            <label for="user_content">내용 :</label>
+            <input type="text" id="user_content">
+            </div>
+
+            <button type="button" onclick="writeBtn();">작성</button>
+        </div>
+
+        <div class="right_box">
+            <h2 class="h2_txt">2022년 7월</h2>
+            <table>
+                <tr>
+                    <th class="red_txt">日</th>
+                    <th>月</th>
+                    <th>火</th>
+                    <th>水</th>
+                    <th>木</th>
+                    <th>金</th>
+                    <th class="blue_txt">土</th>
+                </tr>
+                <tr>
+                    <td class="red_txt"><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p>1</p></td>
+                    <td class="blue_txt"><p>2</p></td>
+                </tr>    
+                <tr>
+                    <td class="red_txt"><p>3</p></td>
+                    <td><p>4</p></td>
+                    <td><p>5</p></td>
+                    <td><p>6</p></td>
+                    <td><p>7</p></td>
+                    <td><p>8</p></td>
+                    <td class="blue_txt"><p>9</p></td>
+                </tr>    
+                <tr>
+                    <td class="red_txt"><p>10</p></td>
+                    <td><p>11</p></td>
+                    <td><p>12</p></td>
+                    <td><p>13</p></td>
+                    <td><p>14</p></td>
+                    <td><p>15</p></td>
+                    <td class="blue_txt"><p>16</p></td>
+                </tr>   
+                <tr>
+                    <td class="red_txt"><p>17</p></td>
+                    <td><p>18</p></td>
+                    <td><p>19</p></td>
+                    <td><p>20</p></td>
+                    <td><p>21</p></td>
+                    <td><p>22</p></td>
+                    <td class="blue_txt"><p>23</p></td>
+                </tr>   
+                <tr>
+                    <td class="red_txt"><p>24</p></td>
+                    <td><p>25</p></td>
+                    <td><p>26</p></td>
+                    <td><p>27</p></td>
+                    <td><p>28</p></td>
+                    <td><p>29</p></td>
+                    <td class="blue_txt"><p>30</p></td>
+                </tr>   
+                <tr>
+                    <td class="red_txt"><p>31</p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td><p></p></td>
+                    <td class="blue_txt"><p></p></td>
+                </tr>                                                                                      
+            </table>
+        </div>
+    </div>
+
+
+    <script defer>
+        // 날짜 관련 
+        let $user_day = document.getElementById('user_day');
+        let $day_count;
+
+        $('p').on('click', function(num){
+            $day_count = num.currentTarget;
+            $user_day.value = $($day_count).text();
+        });
+
+        
+
+        // 내용 관련
+        function writeBtn(){
+            let $content = document.getElementById('user_content');  
+            let $span = document.createElement('span'); 
+            
+            $span.innerText = $content.value;
+            /*$($span).css('position', 'relative');*/
+
+            $($day_count).after($span);
+
+        }
+
+    </script>
+</body>
+</html>

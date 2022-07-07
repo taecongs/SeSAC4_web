@@ -32,6 +32,7 @@ input{
 
 label{
     font-family:'ROKAFSlabSerifMedium';
+    display:inline-block;
 }
 
 button{
@@ -40,7 +41,13 @@ button{
     cursor:pointer;
     font-family:'ROKAFSlabSerifMedium';
     padding:5px 10px;
+    width:240px;
 }
+
+input#user_day, input#user_content{
+    padding:5px 10px;
+}
+
 
 /* 오른쪽 박스 */
 .right_box{
@@ -58,16 +65,24 @@ button{
 table{
     width:100%;
     text-align: center;
+    box-sizing:border-box;
 }
 
 th{
     font-family:'ROKAFSlabSerifMedium';
-    padding:10px 0;
+}
+
+tr{
+    border-bottom:1px solid #ddd;
 }
 
 td{
-    font-family: 'IBMPlexSansKR-Regular';      
-    padding:10px 0;      
+    font-family: 'IBMPlexSansKR-Regular';   
+    vertical-align:top;
+    position:relative;
+    box-sizing:border-box;
+    width:123px !important;
+    height:82px;
 }
 
 .h2_txt{
@@ -82,4 +97,14 @@ td{
 
 .blue_txt{
     color:blue;
+}
+
+td > p:hover {
+    transform: scale(1.4);
+    cursor:pointer;
+    font-weight:600;
+}
+
+p{
+    margin-bottom:0;
 }
