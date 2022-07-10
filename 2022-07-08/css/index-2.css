@@ -1,0 +1,490 @@
+@font-face {
+    font-family: 'HallymGothic-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2204@1.0/HallymGothic-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/* 공통 */
+ul{
+	display: flex;
+	/*justify-content: space-between;*/
+	justify-content:space-around;
+	list-style: none;
+    padding-left:0;
+}
+
+
+a{
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	/*font-size: 1.2em;
+	transition: .3s;*/
+}
+
+
+/* header */
+header{
+	position: relative;
+	width: 100%;
+}
+
+
+/* zero_container */
+.top_1{
+	background: #333;
+	/*padding:0 20px;*/
+	width:100%;
+    height:48px;
+	text-align:Center;
+    margin:0 auto;
+}
+
+.zero_container{
+	position: relative;
+}
+
+.slideshow-container {
+	/*max-width: 800px;*/
+	width:50%;
+	height:48px;
+	position: relative;
+	margin:auto;
+	padding:0 50px;
+}
+
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	width: auto;
+	margin-top: -7px;
+	padding: 16px;
+	color: #fff;
+	transition: 0.6s ease;
+}
+
+/* 화살표 */
+.next::before{
+	font-family:FontAwesome;
+	content:"\f105";	
+}
+
+.prev::before{
+	font-family:FontAwesome;
+	content:"\f104";
+}
+
+.next {
+	right:9%;
+	top:11.4%;
+	font-size:14px;
+}
+
+.prev {
+	left:24%;
+	top:11.4%;
+	font-size:14px;
+}
+
+.prev:hover, .next:hover {
+	color: #fff;
+}
+
+/* -위  -승  -패 */
+.ranking{
+	position:absolute;
+	padding:10px 20px;
+	z-index:9999;
+	cursor: pointer;
+}
+
+.ranking .count.txt .bold{
+	font-size:18px;
+	color:#aaa;
+	font-weight:600;
+	/* margin-right:2px; */
+	font-family: 'HallymGothic-Regular';
+}
+
+/* 위 */
+.ranking_txt{
+	font-size:14px;
+	color:#aaa;	
+	font-family: 'HallymGothic-Regular';
+}
+
+/* 승 */
+#winHeader{
+	font-size:14px;
+	color:#aaa;
+	font-family: 'HallymGothic-Regular';
+}
+
+/* 패 */
+#loseHeader{
+	font-size:14px;
+	color:#aaa;
+	font-family: 'HallymGothic-Regular';
+}
+
+.ranking:hover .count.txt .bold,
+.ranking:hover .ranking_txt{
+	color:#fff;
+}
+
+.ranking:hover #winHeader,
+.ranking:hover #loseHeader{
+	color:#fff;	
+}
+
+/* 일정 */
+.text {
+	padding: 0 20px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height:48px;
+	/*margin-left:67px;*/
+	margin-left:18px;
+
+}
+
+.record{
+	display:inline-block;
+	/*margin-left:30px;*/
+	padding:0 25px;
+	position:relative;
+	overflow:hidden;
+	/*min-width:580px;*/
+	/*min-width:915px;*/
+	height:48px;
+}
+
+.team_wrap{
+	cursor: pointer;
+	padding:5px 0;
+	height:48px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+.team_info{
+	display:inline-block;
+}
+
+#awayTeamNameHeader, #homeTeamNameHeader{
+	color:#aaa;
+	font-family: 'HallymGothic-Regular';
+	font-size:14px;
+}
+
+#awayTeamNameHeader{
+	margin-right:20px;
+}
+
+#homeTeamNameHeader{
+	margin-left:20px;
+}
+
+/* 경기전 */
+.result{
+	display:inline-block;
+}
+
+.result span{
+	background:#111;
+	color:#777;
+	text-align:center;
+	display:inline-block;
+	border:2px solid #000;
+	border-radius:40px;
+	padding:5px;
+	font-size:12px;
+	font-family: 'HallymGothic-Regular';
+	margin:0 10px;
+}
+
+/* 오른쪽 팀 이름 */
+.time_info{
+	margin-left:20px;
+	display:inline-block;
+}
+
+.time_info span{
+	color:#aaa;
+	font-size:14px;
+	font-family: 'HallymGothic-Regular';
+}
+
+
+.team_wrap:hover .team_info span#awayTeamNameHeader,
+.team_wrap:hover .team_info span#homeTeamNameHeader{
+	color:#fff;
+}
+
+
+.team_wrap:hover .result span{
+	color:#111;
+	background:#eee;
+	border:2px solid #eee;
+}
+
+
+
+/* first_container */
+.top_2{
+	background: #f1f1f1;
+	/*padding:0 20px;*/
+    height:40px;
+    margin:0 auto;
+}
+
+.first_container{
+	position: relative;
+	width:90%;
+	margin: 0 auto;
+	display: flex;
+	justify-content:right;
+	align-items: center;
+}
+
+.top_2 ul.social li{
+	margin-right: 15px;    
+}
+
+.top_2 ul.social li:last-child{
+	margin-right:0;
+}
+
+ul.social{
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+    margin-bottom:0;
+    padding:11px 0;
+    font-size:10px;
+    font-family: 'HallymGothic-Regular';
+}
+
+ul.social li a{
+	color: #888;    
+    letter-spacing: -0.5px;
+}
+
+ul.social li a:hover{
+	color: #a50034;
+}
+
+
+/* second_container */
+.second_container{
+	position: relative;
+	width:960px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo{
+	position: absolute;
+	/* width: 150px; */
+	/* height: 150px; */
+	top: -61px;
+	left:41.5%;
+    z-index:9999;
+}
+
+.logo img{
+    width:163px;
+    height:140px;
+}
+
+nav{
+	background: #fff;
+    border-bottom:2px solid #a50034;
+	padding: 15px 0;
+	z-index: 10;
+}
+
+nav ul.menuList{
+	width: 100%;
+    margin-bottom:0px;
+	/* transition: .3s; */
+}
+
+
+nav ul li:nth-child(4){
+	margin-left: 250px;
+}
+
+
+nav ul.menuList li a{
+	color: #333;
+    font-family: 'HallymGothic-Regular';
+	font-weight: bold;
+    font-size:16px;
+}
+
+
+nav ul.menuList li a:hover{
+	color: #a50034;
+}
+
+
+#menu{
+	display: none;
+}
+
+label{
+	color: #000;
+	padding: 15px 0;
+	display: none;
+    position:relative;
+    left:5%;
+	cursor:pointer;
+}
+
+
+@media screen and (max-width: 1650px){
+	.slideshow-container{
+		width:60%;
+	}
+}
+
+@media screen and (max-width: 1350px){
+	.slideshow-container{
+		width:65%;
+	}
+}
+
+@media screen and (max-width: 1250px){
+	.slideshow-container{
+		width:70%;
+	}
+}
+
+@media screen and (max-width: 1150px){
+	.slideshow-container{
+		width:75%;
+	}
+}
+
+@media screen and (max-width: 1050px){
+	.slideshow-container{
+		width:80%;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	nav ul.menuList li a{
+		font-size:14px;
+	}    
+}
+
+@media screen and (max-width: 999px){
+	.slideshow-container{
+		width:100%;
+        padding:0;
+	}    
+
+    .text{
+        margin-left:0;
+        padding:0;
+    }
+}
+
+
+@media screen and (max-width: 690px){
+    /* hanmburger */
+	label{
+		display: block;
+	} 
+    
+    /* first_container */
+	.first_container{
+		padding: 0 15px;
+	}   
+    
+    /* second_container */    
+	.logo{
+		left: 38.9%;
+		top: -40px;
+	}
+
+	.logo img{
+		width: 150px;
+		height:127px;
+	}    
+
+
+    #awayTeamNameHeader, #homeTeamNameHeader{
+		font-size:12px;
+	}
+
+	.time_info span{
+		font-size:12px;
+	}
+
+	.ranking .count.txt .bold{
+		font-size:14px;
+	}
+
+	.ranking_txt{
+		font-size:12px;
+	}
+
+	#winHeader{
+		font-size:12px;
+	}
+
+	#loseHeader{
+		font-size:12px;
+	}
+
+
+	nav{
+		padding: 0;
+	}
+
+	nav ul{
+		position: absolute;
+		top: 50px;
+		left: -100%;
+		background: #000;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		width: 100%;
+		height: 100vh;
+	}
+
+	#menu:checked ~ ul{
+		left: 0;
+	}
+
+	nav ul li{
+		margin: 0 !important;
+		width: 100%;
+	}
+
+	nav ul li a{
+		border: 1px solid #ef3624;
+		padding: 15px 0;
+		margin: 10px 0;
+		text-align: center;
+	}
+
+	nav ul li a:hover{
+		background: #ff0;
+	}
+}   
+
+
+
