@@ -162,7 +162,7 @@
 }
 
 .dic{
-    width:50%;
+    width:33.3333%;
     position:relative;
     float:left;
     /* padding:28px 50px 28px 50px; */
@@ -172,7 +172,7 @@
     color:#fff;
     font-size:16px;
     position:absolute;
-    left:50px;
+    left:10px;
     line-height: 24px;
     transform: skew(-7deg);
     font-family: 'HallymGothic-Regular';
