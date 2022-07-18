@@ -9,7 +9,7 @@ const site = "https://search.naver.com/search.naver?sm=tab_hty.top&where=nexearc
 // const naver = new URL(site)로 정의 
 
 
-// 한번에 정의하는 방법
+// 한번에 정의하는 방법 - new는 클래스를 가져올 때 사용?
 const naver = new url.URL(site);
 
 
