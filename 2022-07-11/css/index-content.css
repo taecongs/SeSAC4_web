@@ -1,3 +1,67 @@
+/** content_1_2 **/
+.content1_2{
+	width:100%;
+	position:relative;
+	background:#fff;
+	padding:5% 0 8% 0;
+}
+
+.dic{
+	width:50%;
+	float:left;
+	position:relative;
+}
+
+.dic{
+	height:315px;
+}
+
+.dic .group{
+	color:#a50034;
+	max-width:90px;
+	font-size:16px;
+	line-height: 24px;
+	transform:skew(-7deg);
+	position:absolute;
+	left:50px;
+	margin-bottom:50px;
+}
+
+.dic .group .link_btn{
+	display:block;
+	paiddng:0;
+	fon-size:14px;
+	letter-spacing: 1px;
+	line-height: 1px;
+	text-indent: 3px;
+	transition: all 0.5s;
+	position:relative;
+	left:-20px;
+}
+
+.dic ul{
+	margin-left:130px;
+}
+
+.dic ul li{
+	font-size:20px;
+	line-height: 28px;
+	margin-bottom:20px;
+	display:table;
+}
+
+.dic ul li span{
+	display:inline-block;
+	width:80px;
+	height:65px;
+	margin-right:20px;
+	background-size:cover;
+	background-position:center top;
+	background-color:#eee;
+}
+
+
+
 /** content_2 **/
 .content_2{
 	width:100%;
