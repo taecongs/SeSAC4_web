@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>index3</title>
+</head>
+<body>   
+    <form action="receive" name="" target="" method="post">
+        <fieldset>
+            <label for="name">이름 :</label>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="pass">비밀번호 :</label>
+            <input type="password" id="pass" name="pass" required>  
+    
+            <br><br>
+    
+            <label>성별 :
+                <label for="man">남자</label>
+                <input type="radio" name="gender" value="남자" id="man">
+        
+                <label for="girl">여자</label>
+                <input type="radio" name="gender" value="여자" id="girl">
+            </label>
+    
+            
+            <br><br>
+    
+    
+            <label>생년월일 :
+    
+                <select name="yy" id="year">
+                    <% for(let yy = 1950; yy <= 2022; yy++){ %>
+                        <option><%=yy%>년</option>
+                    <% } %>
+                </select>
+    
+                <select name="mm" id="month" title="월">
+                    <% for(let mm = 1; mm <= 12; mm++){ %>
+                        <option><%=mm%>월</option>                    
+                    <% } %>           
+                </select>
+    
+                <select name="dd" id="day" title="일">
+                    <% for(let dd = 1; dd <= 31; dd++){ %>
+                        <option><%=dd%>일</option>
+                    <% } %>               
+                </select>
+            </label>
+    
+    
+            <br><br>
+    
+    
+            <label>관심사 :
+                <label for="travel">여행</label>
+                <input type="checkbox" name="interest" value="여행" id="trabel">
+    
+                <label for="passion">패션</label>
+                <input type="checkbox" name="interest" value="패션" id="passion">
+    
+                <label for="food">음식</label>
+                <input type="checkbox" name="interest" value="음식" id="food">
+            </label>
+    
+            <br><br>
+
+            <label>색상 :
+                <input type="color" name="color" value="색상">
+            </label>
+    
+    
+            <br><br>
+            <button>회원가입</button>
+        </fieldset>
+    </form>
+</body>
+</html>

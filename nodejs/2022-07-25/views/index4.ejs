@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9ad05a77c3.js" crossorigin="anonymous"></script>
+    <title>index3</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'MICEGothic Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'MICEGothic';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-01@1.0/MICEGothic.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .terms_area {
+            height: 200px;
+            border: 1px solid #d2d2d2;
+            background: #fff;
+            font-size: 12px;
+            color: #888;
+            line-height: 1.75;
+            font-weight: 300;
+            overflow-y: auto;
+            padding: 20px;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input#agree{
+            width:auto;
+        }
+
+        label.intro{
+            width:100%;
+            text-align:left;
+        }
+
+
+        body {
+            background: #f6f5f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: 'Montserrat', sans-serif;
+            height: 100vh;
+            margin: -20px 0 50px;
+        }
+
+        h1 {
+            font-weight: bold;
+            margin: 0;
+            font-family: 'MICEGothic Bold';
+        }
+
+        h2 {
+            text-align: center;
+            font-family: 'MICEGothic';
+        }
+
+        p {
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+            letter-spacing: 0.5px;
+            margin: 20px 0 30px;
+        }
+
+        span {
+            font-size: 12px;
+            font-family: 'MICEGothic';
+        }
+
+        a {
+            color: #333;
+            font-size: 14px;
+            text-decoration: none;
+            margin: 15px 0;
+        }
+
+        button {
+            /* border-radius: 20px; */
+            background: #FF416C;
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #FFFFFF;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 12px 45px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: transform 80ms ease-in;
+            font-family: 'MICEGothic';
+            width:100%;
+            border:none;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        button.ghost {
+            background-color: transparent;
+            border-color: #FFFFFF;
+        }
+
+        form {
+            background-color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 50px;
+            height: 100%;
+            text-align: center;
+        }
+
+        select{
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;            
+        }
+
+        input {
+            background-color: #eee;
+            border: none;
+            padding: 12px 15px;
+            margin: 8px 0;
+            width: 100%;
+        }
+
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+                0 10px 10px rgba(0, 0, 0, 0.22);
+            position: relative;
+            overflow: hidden;
+            width: 1000px;
+            max-width: 100%;
+            min-height: 1000px;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in-container {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .container.right-panel-active .sign-in-container {
+            transform: translateX(100%);
+        }
+
+        .sign-up-container {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.right-panel-active .sign-up-container {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: show 0.6s;
+        }
+
+        @keyframes show {
+
+            0%,
+            49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+
+            50%,
+            100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .overlay-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: transform 0.6s ease-in-out;
+            z-index: 100;
+        }
+
+        .container.right-panel-active .overlay-container {
+            transform: translateX(-100%);
+        }
+
+        .overlay {
+            background: #FF416C;
+            background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+            background: linear-gradient(to right, #FF4B2B, #FF416C);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 0 0;
+            color: #FFFFFF;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .container.right-panel-active .overlay {
+            transform: translateX(50%);
+        }
+
+        .overlay-panel {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            text-align: center;
+            top: 0;
+            height: 100%;
+            width: 50%;
+            transform: translateX(0);
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .overlay-left {
+            transform: translateX(-20%);
+        }
+
+        .container.right-panel-active .overlay-left {
+            transform: translateX(0);
+        }
+
+        .overlay-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container.right-panel-active .overlay-right {
+            transform: translateX(20%);
+        }
+
+        .social-container {
+            margin: 20px 0;
+        }
+
+        .social-container a {
+            border: 1px solid #DDDDDD;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 5px;
+            height: 40px;
+            width: 40px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            font-size: 14px;
+            bottom: 0;
+            position: fixed;
+            left: 0;
+            right: 0;
+            text-align: center;
+            z-index: 999;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer i {
+            color: red;
+        }
+
+        footer a {
+            color: #3c97bf;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-in-container">
+            <form action="receive" name="" target="" method="post">
+                <label class="intro" for="userid">아이디</label>
+                <input type="text" id="userid" name="userid" required>
+
+                <br>
+
+                <label class="intro" for="pass">비밀번호</label>
+                <input type="password" id="pass" name="pass" required>
+
+                <br> 
+
+                <label class="intro" for="passtwo">비밀번호 재확인</label>
+                <input type="password" id="passtwo" name="passtwo" required>
+
+                <br>  
+                
+                <label class="intro" for="name">이름</label>
+                <input type="text" id="name" name="name" required>    
+
+                <br>                  
+
+                <label class="intro" for="birth">생년월일</label>
+                <input type="date" id="birth" name="birth" required> 
+                
+                <br>                     
+                
+                <label class="intro" for="gender">성별</label>
+                <select name="gender" id="gender">
+                    <option value="남자">남자</option>
+                    <option value="여자">여자</option>
+                </select>
+
+                <br>                  
+
+                <label class="intro" for="email">본인 확인 이메일(선택)</label>
+                <input type="email" id="email" name="email" required> 
+                
+
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>                
+                <button>회원가입</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>To keep connected with us please login with your personal info</p>
+                    <button class="ghost" id="signIn">Sign In</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1 style="margin-bottom:20px;">회원가입안내</h1>
+
+                    <div class="terms_area">
+                        <span class="bangcim" style="text-align:left;">개인정보 처리방침</span><br>
+                        (이하 '회사'는) 고객님의 개인정보를 중요시하며, "정보통신망 이용촉진 및 정보보호"에 관한 법률을 준수하고 있습니다.
+                        회사는 개인정보취급방침을 통하여 고객님께서 제공하시는 개인정보가 어떠한 용도와 방식으로 이용되고 있으며, 개인정보보호를 위해 어떠한 조치가 취해지고 있는지
+                        알려드립니다.<br>
+                        # 수집하는 개인정보 항목
+                        회사는 상담, 서비스 신청 등을 위해 아래와 같은 개인정보를 수집하고 있습니다.
+                        - 수집항목 : 이름, 전화번호 , 휴대전화번호 , 이메일 , 서비스 이용기록 , 접속 로그 , 쿠키 , 접속 IP 정보
+                        - 개인정보 수집방법 : 신청서 작성 및 게시물 작성<br>
+                        # 개인정보의 수집 및 이용목적
+                        회사는 수집한 개인정보를 다음의 목적을 위해 활용합니다.
+                        - 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산 콘텐츠 제공<br>
+                        # 개인정보의 보유 및 이용기간
+                        회사는 개인정보 수집 및 이용목적이 달성된 후에는 예외 없이 해당 정보를 지체 없이 파기합니다.
+                    </div>
+
+                    <div style="width:100%; color:#fff; text-align:right; margin:10px 0; font-size:12px !important;">
+                        <label for="agree">개인정보 취급방침에 동의(필수)</label>
+                        <input class="agree_check" type="checkbox" id="agree" name="agree" required>
+                    </div>
+                    
+
+                    <div class="terms_area">
+                        <span class="bangcim" style="text-align:left;">프로모션 정보 수신 동의</span><br>
+                        개인정보보호법에 따라 네이버에 회원가입 신청하시는 분께 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시
+                        불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+                        1. 수집하는 개인정보
+                        이용자는 회원가입을 하지 않아도 정보 검색, 뉴스 보기 등 대부분의 네이버 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 메일, 캘린더, 카페, 블로그 등과 같이
+                        개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 네이버는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.
+
+                        회원가입 시점에 네이버가 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+                        - 회원 가입 시에 ‘아이디, 비밀번호, 이름, 생년월일, 성별, 휴대전화번호’를 필수항목으로 수집합니다. 만약 이용자가 입력하는 생년월일이 만14세 미만 아동일 경우에는
+                        법정대리인 정보(법정대리인의 이름, 생년월일, 성별, 중복가입확인정보(DI), 휴대전화번호)를 추가로 수집합니다. 그리고 선택항목으로 이메일 주소를 수집합니다.
+                        - 단체아이디로 회원가입 시 단체아이디, 비밀번호, 단체이름, 이메일주소, 휴대전화번호를 필수항목으로 수집합니다. 그리고 단체 대표자명을 선택항목으로 수집합니다.
+                        서비스 이용 과정에서 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+                        - 회원정보 또는 개별 서비스에서 프로필 정보(별명, 프로필 사진)를 설정할 수 있습니다. 회원정보에 별명을 입력하지 않은 경우에는 마스킹 처리된 아이디가 별명으로 자동
+                        입력됩니다.
+
+                        - 네이버 내의 개별 서비스 이용, 이벤트 응모 및 경품 신청 과정에서 해당 서비스의 이용자에 한해 추가 개인정보 수집이 발생할 수 있습니다. 추가로 개인정보를 수집할
+                        경우에는 해당 개인정보 수집 시점에서 이용자에게 ‘수집하는 개인정보 항목, 개인정보의 수집 및 이용목적, 개인정보의 보관기간’에 대해 안내 드리고 동의를 받습니다.
+
+                        서비스 이용 과정에서 IP 주소, 쿠키, 서비스 이용 기록, 기기정보, 위치정보가 생성되어 수집될 수 있습니다. 또한 이미지 및 음성을 이용한 검색 서비스 등에서 이미지나
+                        음성이 수집될 수 있습니다.
+                    </div>
+
+                    <div style="width:100%; color:#fff; text-align:right; margin:10px 0; font-size:12px !important;">
+                        <label for="agree">프로모션 정보 수신 동의(선택)</label>
+                        <input class="agree_check" type="checkbox" id="agree" name="agree" required>
+                    </div>
+
+                    <div class="terms_area">
+                        <span class="bangcim" style="text-align:left;">위치기반서비스 이용약관 동의</span><br>
+                        제 1 조 (목적)
+                        이 약관은 네이버 주식회사 (이하 “회사”)가 제공하는 위치기반서비스와 관련하여 회사와 개인위치정보주체와의 권리, 의무 및 책임사항, 기타 필요한 사항을 규정함을 목적으로 합니다.
+                        
+                        제 2 조 (약관 외 준칙)
+                        이 약관에 명시되지 않은 사항은 위치정보의 보호 및 이용 등에 관한 법률, 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 전기통신기본법, 전기통신사업법 등 관계법령과 회사의 이용약관 및 개인정보처리방침, 회사가 별도로 정한 지침 등에 의합니다.
+                        
+                        제 3 조 (서비스 내용 및 요금)
+                        ① 회사는 위치정보사업자로부터 위치정보를 전달받아 아래와 같은 위치기반서비스를 제공합니다.
+                        
+                        1. GeoTagging 서비스: 게시물 또는 이용자가 저장하는 콘텐츠에 포함된 개인위치정보주체 또는 이동성 있는 기기의 위치정보가 게시물과 함께 저장됩니다. 저장된 위치정보는 별도의 활용없이 보관되거나, 또는 장소를 기반으로 콘텐츠를 분류하거나 검색할 수 있는 기능이 제공될 수도 있습니다.
+                        2. 위치정보를 활용한 검색결과 및 콘텐츠 제공 : 정보 검색을 요청하거나 개인위치정보주체 또는 이동성 있는 기기의 위치정보를 제공 시 본 위치정보를 이용한 검색결과, 주변결과(맛집, 주변업체, 교통수단 등), 번역결과를 제시합니다.
+                        3. 이용자 위치를 활용한 광고정보 제공: 검색결과 또는 기타 서비스 이용 과정에서 개인위치정보주체 또는 이동성 있는 기기의 위치를 이용하여 광고소재를 제시합니다.
+                        4. 이용자 보호 및 부정 이용 방지: 개인위치정보주체 또는 이동성 있는 기기의 위치를 이용하여 권한없는 자의 비정상적인 서비스 이용 시도 등을 차단합니다.
+                        5. 길 안내 등 생활편의 서비스 제공: 교통정보와 길 안내 등 최적의 경로를 지도로 제공하며, 주변 시설물 찾기, 뉴스/날씨 등 생활정보, 긴급구조 서비스, 주소 자동 입력 등 다양한 운전 및 생활 편의 서비스를 제공합니다.
+                        ② 제1항 위치기반서비스의 이용요금은 무료입니다.
+                    </div>   
+                    
+                    <div style="width:100%; color:#fff; text-align:right; margin:10px 0; font-size:12px !important;">
+                        <label for="agree">위치기반서비스 이용약관 동의(선택)</label>
+                        <input class="agree_check" type="checkbox" id="agree" name="agree" required>
+                    </div>
+                    <!--<button class="ghost" id="signUp">Sign Up</button>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
