@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index.ejs</title>
+</head>
+<body>
+    <!-- action => 어느 서버로 데이터를 보낼지 결정한다. -->
+    <!-- name => 이름을 정한다. 거의 사용하지는 않는다. -->
+    <!-- target => _blank, _self -->
+    <!-- method => get(action에 입력한 URL에 파라미터의 형태로 전송), post(header의 body에 포함해서 전송) -->
+    <form action="overview" name="" target="" method="get">
+        <label for="name">아이디</label>
+        <input type="text" id="name" name="name" placeholder="필수 입력" required>
+
+        <br>
+        
+        <label for="pass">비밀번호</label>
+        <input type="password" id="pass" name="pass" placeholder="필수 입력" required>
+
+        <br>
+
+        <label for="nam">남</label>
+        <input type="radio" name="gender" value="남자" id="nam">
+
+        <label for="femail">여</label>
+        <input type="radio" name="gender" value="여자" id="femail">
+
+        <br>
+        
+        <label for="football">축구</label>
+        <input type="checkbox" name="sport" value="축구" id="football">
+
+        <label for="baseball">야구</label>
+        <input type="checkbox" name="sport" value="야구" id="baseball">
+
+        <label for="basketball">농구</label>
+        <input type="checkbox" name="sport" value="농구" id="basketball">
+
+<!--
+        <input type="date">
+        <input type="color">
+        <input type="number">
+        <input type="time">
+        <input type="password">
+-->
+        <br>
+
+        <label for="brand">브랜드</label>
+        <select name="brand" id="brand">
+            <option value="샤넬">샤넬</option>
+            <option value="구찌">구찌</option>
+            <option value="루이비통">루이비통</option>
+        </select>
+
+        <br><br>
+
+
+        <input type="reset">
+        <button>전송</button>
+    </form>
+</body>
+</html>

@@ -5,11 +5,13 @@ const bodyParser = require('body-parser');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+
+// 객체 형태로 전달된 데이터내에서 또다른 중첩된 객체를 허용
 app.use(express.urlencoded({extended : true}));
 
 
 // json 형태로 데이터를 받겠다라고 선언
-// json => 서버와 클라리언트 간의 교류를 할 때 많이  사용되는 데이터 형식
+// json => 서버와 클라이언트 간의 교류를 할 때 많이 사용되는 데이터 형식
 app.use(bodyParser.json());
 
 

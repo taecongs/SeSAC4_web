@@ -11,9 +11,6 @@ app.use(express.urlencoded({extended : true}));
 // json => 서버와 클라리언트 간의 교류를 할 때 많이  사용되는 데이터 형식
 app.use(bodyParser.json());
 
-app.use(express.static('public'));
-
-
 
 app.get('/', function(req,res){
     res.render('index3.ejs');
