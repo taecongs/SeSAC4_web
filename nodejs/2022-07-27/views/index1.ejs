@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Axois</title>
+</head>
+<style>
+    @font-face {
+        font-family: 'GangwonEdu_OTFBoldA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body{
+        text-align:center;
+    }
+
+    button {
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 50%;
+        border: 0;
+        text-align:center;
+        padding: 15px;
+        margin-bottom:20px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;
+        font-family: 'GangwonEdu_OTFBoldA';
+    }
+</style>
+<script>
+    function sendPost() {
+        axios({
+            method : 'post',
+            url    : 'http://localhost:8080/receive',
+            data   : {
+                // <input type="text" name="name"> 와 같다.
+                name : '김소혜',
+                age  : 27
+            }
+        }).then((a) => {return a.data; }) 
+          .then((d) => {
+            alert('d.message');
+          });
+    }
+</script>
+
+<body>
+    <!-- 기본값은 submit -->
+    <!-- type을 button으로 설정하고 함수를 실행하면 함수만 실행한다. -->
+    <!-- type을 submit으로 설정하면 기본적으로 form을 전송한다. => form 전송은 페이지가 이동이 되기 때문에 함수가 실행 된 값의 확인이 어렵다. -->
+
+    <form action="/receive">
+        <button type="button" onclick="sendPost();">버튼</button>
+    </form>
+
+    <button onclick="sendPost();">sendPost</button>
+</body>
+
+</html>

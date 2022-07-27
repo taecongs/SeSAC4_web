@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>index3</title>
+</head>
+<script>
+    function contactForm(){
+        let form = document.getElementById("form_contact");
+            let result = form.checkValidity();
+                if(!result){
+                    form.reportValidity();
+                    return false;
+                }
+
+                // name : form.name.value => let user = req.query.name 이다.
+                axios({
+                    method : 'get',
+                    url    : 'http://localhost:8080/receive',
+                    params : {
+                        // name은 임의로 설정한 키 => 여기서 name은 js 파일에서 let user = req.query.name;
+                        // form.name.valued은 input text 에 입력된 값을 가져온다. 
+                        name : form.name.value
+                    }                    
+                }).then((a) => {
+                    return a.data;
+                }).then((b) => {
+                    alert(b.alertTxt);
+                });
+
+                // 한번에 정의하는 방법
+                // .then((a) => {alert(a.data.alertTxt); });
+    }
+</script>
+<body>   
+    <form id="form_contact" action="receive" name="" target="" method="post">
+        <fieldset>
+            <label for="name">이름 :</label>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="pass">비밀번호 :</label>
+            <input type="password" id="pass" name="pass" required>  
+    
+            <br><br>
+    
+            <label>성별 :
+                <label for="man">남자</label>
+                <input type="radio" name="gender" value="남자" id="man">
+        
+                <label for="girl">여자</label>
+                <input type="radio" name="gender" value="여자" id="girl">
+            </label>
+    
+            
+            <br><br>
+    
+    
+            <label>생년월일 :
+    
+                <select name="yy" id="year">
+                    <% for(let yy = 1950; yy <= 2022; yy++){ %>
+                        <option><%=yy%>년</option>
+                    <% } %>
+                </select>
+    
+                <select name="mm" id="month" title="월">
+                    <% for(let mm = 1; mm <= 12; mm++){ %>
+                        <option><%=mm%>월</option>                    
+                    <% } %>           
+                </select>
+    
+                <select name="dd" id="day" title="일">
+                    <% for(let dd = 1; dd <= 31; dd++){ %>
+                        <option><%=dd%>일</option>
+                    <% } %>               
+                </select>
+            </label> 
+            <br><br>
+            <button type="button" onclick="contactForm();">회원가입</button>
+        </fieldset>
+    </form>
+</body>
+</html>
