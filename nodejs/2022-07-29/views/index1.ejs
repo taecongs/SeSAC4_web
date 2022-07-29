@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>파일 업로드</title />
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile">
+        <input type="text" name="username">
+        <button>업로드</button>
+    </form>
+
+    <br>
+
+    <!-- multiple : 한번에 여러개의 파일을 선택해서 보낼 때 -->
+    <form action="/upload/array" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile" multiple>
+        <button>업로드</button>
+    </form>
+
+    <br>
+
+    <!-- -->
+    <form action="/upload/fields" method="post" enctype="multipart/form-data">
+        <input type="file" name="userfile">
+        <input type="file" name="userfile2">
+        <input type="file" name="userfile3">
+        <button>업로드</button>
+    </form>
+</body>
+</html>
