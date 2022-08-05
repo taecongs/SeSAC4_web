@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        function writeComment(){
+            let form = document.getElementById('form_comment');
+
+            axios ({
+                method : 'post',
+                url    : 'http://localhost:8080/visitor/write',
+                data   : {
+                    name : form.name.value,
+                    comment : form.comment.value
+                }
+            })
+            .then((rep) => {
+                // rep.data = {id : 값}
+                return rep.data;
+            })
+            .then((data) => {
+                // rep.data = {id : 값}
+
+                let html =  "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
+
+                $('table').append(html);
+            });
+        }
+    </script>
+</head>
+<style>
+    @font-face {
+        font-family: 'GangwonEdu_OTFBoldA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'GangwonEdu_OTFBoldA';
+    }
+
+    #table_box {
+        margin-top: 5%;
+    }
+
+    button {
+        font-family: 'GangwonEdu_OTFBoldA';
+    }
+
+    button.bt_submit {
+        margin-top: 10px;
+    }
+</style>
+
+<body>
+    <form id="form_comment">
+        <fieldset style="width:50%;">
+            <legend>방명록 등록</legend>
+            <input type="text" name="name" placeholder="사용자 이름"><br>
+            <input type="text" name="comment" placeholder="방명록"><br>
+            <div id="button-group">
+                <button type="button" class="bt_submit" onclick="writeComment();">등록</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <table id="table_box" border="1" cellpadding="5" style="width:51.5%;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>작성자</th>
+                <th>방명록</th>
+                <th>수정</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% for(let i=0; i < data.length; i++){ %>
+                <tr>
+                    <td>
+                        <%=data[i].id%>
+                    </td>
+                    <td>
+                        <%=data[i].name%>
+                    </td>
+                    <td>
+                        <%=data[i].comment%>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+
+<!--
+    <% for(let i=0; i < data.length; i++){ %>
+        <td>
+            <%=data[i].comment%>
+        </td>
+        <p>
+            <%=data[i].name%>
+        </p>
+        <% } %>
+-->        
+</body>
+
+</html>
