@@ -7,14 +7,14 @@
     <title>방명록</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+    
     <script>
         function writeComment(){
             let form = document.getElementById('form_comment');
 
-            axios ({
+            axios({
                 method : 'post',
-                url    : 'http://localhost:8080/visitor/write',
+                url    : 'http://localhost:8081/visitor/write',
                 data   : {
                     name : form.name.value,
                     comment : form.comment.value
@@ -22,16 +22,12 @@
             })
             // 작성 후 새로고침을 해야 추가되는 부분을 아래 방법으로 정의하면 작성 후 바로 추가된다.
             .then((rep) => {
-                // rep.data = {id : 값}
                 return rep.data;
             })
             .then((data) => {
-                // rep.data = {id : 값}
-
-                let html =  "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
-
+                let html = "<tr><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td></tr>";
                 $('table').append(html);
-            });
+            })
         }
     </script>
 </head>
@@ -85,6 +81,7 @@
         margin-top:5px;
         font-family: 'GangwonEdu_OTFBoldA';
     }
+
 </style>
 
 <body>
@@ -113,7 +110,7 @@
 
         <tbody>
             <!-- controller에서 {data : result} 키 : 값 으로 정보를 가져온다. -->
-            <% for(let i=0; i < data.length; i++){ %>
+            <% for(let i = 0; i < data.length; i++){ %>
                 <tr>
                     <td>
                         <%=data[i].id%>
@@ -128,18 +125,6 @@
             <% } %>
         </tbody>
     </table>
-
-
-<!--
-    <% for(let i=0; i < data.length; i++){ %>
-        <td>
-            <%=data[i].comment%>
-        </td>
-        <p>
-            <%=data[i].name%>
-        </p>
-        <% } %>
--->        
 </body>
 
 </html>
