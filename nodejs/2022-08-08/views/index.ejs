@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>방명록</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+        function writeComment(){
+            let form = document.getElementById('form_comment');
+
+            axios ({
+                method : 'post',
+                url    : 'http://localhost:8080/visitor/write',
+                data   : {
+                    name : form.name.value,
+                    comment : form.comment.value
+                }
+            })
+            // 작성 후 새로고침을 해야 추가되는 부분을 아래 방법으로 정의하면 작성 후 바로 추가된다.
+            .then((rep) => {
+                // rep.data = {id : 값}
+                return rep.data;
+            })
+            .then((data) => {
+                // rep.data = {id : 값}
+
+                let html =  "<tr id='tr_" + data.id + "'><td>" + data.id + "</td><td>" + form.name.value + "</td><td>" + form.comment.value + "</td>" +
+                "<td><button type = 'button' onclick = 'editComment(" + data.id + ");'> 수정 </button></td>" + 
+                "<td><button type = 'button' onclick = 'deleteComment(" + data.id + ");'> 삭제 </button> </td></tr>";
+
+                $('table').append(html);
+            });
+        }
+
+
+
+        // 2022-08-08 1번째 순서로 정의
+        function editComment(id){
+            axios({
+                method : 'get',
+                url : 'http://localhost:8080/visitor/get?id=' + id 
+            })
+            .then((rep) => {
+                return rep.data;
+
+                /*
+                // res.send({result : result3});
+                // {result : result3};
+                // [{id : 0, name : 1}];
+                // rep.data.result3[0].id;
+
+
+                //  res.send({result : result3[0]});
+                // {result : result3[0]};
+                // {id : 0, name : 1};
+                // rep.data.result3.id;
+                */
+            })
+            .then((data) => {
+                console.log(data.result);
+
+
+                let form = document.getElementById('form_comment');
+                form.name.value = data.result.name;
+                form.comment.value = data.result.comment;
+
+
+                let html = "<button type='button' onclick='editDo(" + id + ");'> 수정 </button>" +
+                "<button type = 'button' onclick = 'editCancel();'> 취소 </button>";
+
+                // 태그 내용이 위 html 내용 버튼으로 변경된다.
+                document.getElementById('button-group').innerHTML = html;
+            })
+        }
+
+
+
+        function editCancel(){
+            let form = document.getElementById('form_comment');
+            form.reset();
+
+
+            let html = "<button type = 'button' onclick = 'writeComment();'> 등록 </button>";
+
+            document.getElementById('button-group').innerHTML = html;
+        }
+
+
+
+
+        function editDo(id){
+            let form = document.getElementById('form_comment');
+            axios({
+                method : 'patch',
+                url : 'http://localhost:8080/visitor/edit',
+                data : {
+                    id : id,
+                    name : form.name.value,
+                    comment : form.comment.value
+                }
+            })
+            .then((rep) => {
+                return rep.data;
+            })
+            .then((data) => {
+                alert(data);
+
+                // 수정 버튼을 누른 <tr>을 선택한다는 의미
+                let tr = document.getElementById("tr_" + id);
+
+                // 내가 선택한 <tr>의 자식요소를 선택하며 배열 형태로 들어간다.
+                let children = tr.children;
+
+
+                $(children[1]).text(form.name.value);
+                $(children[2]).text(form.comment.value);
+
+                // 0 : td, 1 : td
+                console.log(children);
+            })
+        }
+
+
+        function deleteComment(id){
+            axios({
+                method : 'delete',
+                url : 'http://localhost:8080/visitor/delete',
+                data : {id : id}
+            })
+            .then((rep) => {
+                return rep.data;
+            })
+            .then((data) => {
+                alert(data);
+
+                let tr = document.getElementById('tr_' + id);
+                $(tr).remove();
+            })
+        }
+    </script>
+</head>
+<style>
+    @font-face {
+        font-family: 'GangwonEdu_OTFBoldA';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    body {
+        font-family: 'GangwonEdu_OTFBoldA';
+    }
+
+    #table_box {
+        margin-top: 5%;
+    }
+
+    input{
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        margin: 0 0 15px;
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    button {
+        font-family: 'GangwonEdu_OTFBoldA';
+        text-transform: uppercase;
+        outline: 0;
+        background: #4CAF50;
+        width: 15%;
+        border: 0;
+        padding: 15px;
+        color: #FFFFFF;
+        font-size: 14px;
+        -webkit-transition: all 0.3 ease;
+        transition: all 0.3 ease;
+        cursor: pointer;      
+        margin-right:10px;
+    }
+
+    button.edit_btn{
+        margin-right:0;
+        width:50%;
+    }
+
+    button.reset_btn{
+        margin-right:0;
+        width:50%;
+    }
+
+    button:nth-child(2){
+
+    }
+
+    button:hover, button:active, button:focus {
+        background: #43A047;
+    }    
+
+    input[type="text"]{
+        margin-top:5px;
+        font-family: 'GangwonEdu_OTFBoldA';
+    }
+</style>
+
+<body>
+    <form id="form_comment" style="width:100%;">
+        <fieldset>
+            <legend>방명록 등록</legend>
+            <input type="text" name="name" placeholder="사용자 이름"><br>
+            <input type="text" name="comment" placeholder="방명록"><br>
+            <div id="button-group">
+                <button type="button" class="bt_submit" onclick="writeComment();">등록</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <table id="table_box" border="1" cellpadding="5" style="width:100%; text-align:center;">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>작성자</th>
+                <th>방명록</th>
+                <th style="width:15%;">수정</th>
+                <th style="width:15%;">삭제</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- controller에서 {data : result} 키 : 값 으로 정보를 가져온다. -->
+            <% for(let i=0; i < data.length; i++){ %>
+                <!-- id="tr_1" 이런식으로 tr에 id 값을 넣어줄 수 있다. -->
+                <tr id="tr_<%=data[i].id%>">
+                    <td>
+                        <%=data[i].id%>
+                    </td>
+                    <td>
+                        <%=data[i].name%>
+                    </td>
+                    <td>
+                        <%=data[i].comment%>
+                    </td>
+                    <td>
+                        <!-- 클릭했을때 mysql에서 준 프라이머리키 아이디를 보낸다.-->
+                        <button class="edit_btn" type="button" onclick="editComment('<%=data[i].id%>');">수정</button>
+                    </td>
+                    <td>
+                        <button class="reset_btn" type="button" onclick="deleteComment('<%=data[i].id%>');">삭제</button>
+                    </td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+
+
+<!--
+    <% for(let i=0; i < data.length; i++){ %>
+        <td>
+            <%=data[i].comment%>
+        </td>
+        <p>
+            <%=data[i].name%>
+        </p>
+        <% } %>
+-->        
+</body>
+
+</html>
