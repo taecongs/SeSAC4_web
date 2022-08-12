@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pop {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+
+    .tit_h {
+        background: #0359AE;
+        color: #fff;
+        padding: 15px 20px;
+    }
+
+    .left_t {
+        color: #fff;
+    }
+
+    span#close a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .pop .layerBox .btnClose {
+        display: inline-block;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        padding: 6px 12px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+
+    .pop .title {
+        margin: 10px 0;
+        font-size: 25px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+
+
+
+    .pop .layerBox {
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        /* padding:30px;  */
+        background: #fff;
+        /* border-radius:6px; */
+    }
+
+
+    .deco_t{
+        background:#fff;
+        padding:20px;
+    }
+
+    .side_t{
+        background:fff;
+        border:1px solid #ddd;
+        text-align:center;
+        padding:15px;
+    }
+
+
+    .pop p {
+        line-height: 20px;
+        font-size: 14px;
+    }
+
+    .pop {
+        /*display:none;*/
+    }
+
+    .pop:before {
+        display: block;
+        content: "";
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .5);
+    }
+
+    .pop .layerBox .title {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    .txt_1{
+        font-weight:600;
+        text-decoration: underline;
+    }
+
+
+    .pop .layerBox .cont {
+        margin-bottom: 0px;
+    }
+
+
+    .pop .layerBox p {
+        line-height: 20px;
+        font-size: 13px;
+    }
+
+    .pop .layerBox .btnTodayHide {
+        font-size: 13px;
+        font-weight: 600;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <div id="pop" class="pop">
+        <div class="layerBox">
+            <div class="tit_h">
+                <span class="left_t">안내</span>
+                <span id="close" class="btnClose"> <a href="#0">X</a></span>
+            </div>
+            <div class="deco_t">
+                <div class="side_t">
+                    <h1 class="title">인터넷익스플로러(IE) 지원 종료 안내</h1>
+                    <div class="cont">
+                        <p style="font-size:16px;">인터넷익스플로러(IE) 서비스 지원이 <span class="txt_1"> 2022년 6월 15일 종료</span>됨에<br> 따라 안전하고 원활한 LH청약센터 이용을 위해 크롬, 사파리, <br> 엣지 등의  웹 브라우저를 이용해주시기 바랍니다.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="close">
+                <span id="check" class="btnTodayHide"><input type="checkbox" value="checkbox" name="chkbox"
+                        id="chkday" /><label for="chkday">오늘 그만 보기</label></span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

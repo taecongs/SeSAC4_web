@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 내가 설정한 쿠키 (key=value)
+        console.log(document.cookie);
+        
+        // 여러개의 옵션을 작성하면 ;(세미 콜론)으로 구분한다.
+        // 옵션을 작성할 때는 명확한 값을 작성해야 한다.
+        document.cookie = "user=sesac; expires=Sat, 13 Aug 2022 13:00:00 GMT; path=/"
+        console.log(document.cookie);
+
+
+
+
+        let cookieArr = document.cookie.split(';');
+
+        // for (let i = 0; i < cookieArr.length; i++) 와 동일하다.
+        for(let i in cookieArr){
+            console.log(cookieArr[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
