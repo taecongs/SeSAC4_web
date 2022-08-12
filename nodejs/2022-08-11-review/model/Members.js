@@ -1,4 +1,15 @@
+    //    CREATE TABLE visitor (
+    //         id INT not null primary key auto_increment,
+    //         name VARCHAR(10) not null,
+    //         comment MEDIUMTEXT
+    //    );
+
+
+    // Sequelize는 model/index.js에서의 sequelize
+    // DataTypes는 model/index.js에서의 Sequelize
 const Members = (Sequelize, DataTypes) => {
+
+    // 테이블 구조 정의 - (1)모델(테이블) 이름 설정 (2) 컬럼 정의 (3) 모델의 옵션 정의    
     const model = Sequelize.define(
         'membership',
 
