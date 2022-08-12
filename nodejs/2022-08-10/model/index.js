@@ -30,6 +30,7 @@ db.Sequelize = Sequelize;
 db.Visitor = require('./Visitor')(sequelize, Sequelize);
 
 
+
 // db는 키 : 값 형태의 {'sequelize' : sequelize, 'Sequelize' : Sequelize} 모듈로 내보낸다.
 module.exports = db;
 
