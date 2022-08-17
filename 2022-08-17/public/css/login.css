@@ -1,0 +1,75 @@
+/*=========================================================
+    폰트 패밀리
+=========================================================*/
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/*=========================================================
+    공통
+=========================================================*/
+:root{
+    /* 폰트 */
+    --font-Light:'GmarketSansLight';
+    --font-Medium:'GmarketSansMedium';   
+    --font-Bold:'GmarketSansBold'; 
+
+    /* 컬러 */
+    --white-color:#fff;
+    --black-color:#0a0a0a;
+    --gray-color:#757575;
+    --main-color:#0359AE;
+    --sub-color:#0359AE;
+    --error-color:#e00012;
+}
+
+
+
+/*=========================================================
+    멤버쉽 전체 박스
+=========================================================*/
+#login-box{
+    width:100%;
+    position:relative;
+    top:50%;    
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*=========================================================
+    헤더
+=========================================================*/
+#header{
+    text-align:center;
+}
+
+img#logo{
+    width:270px;
+}
+
+
+
+/*=========================================================
+    헤더
+=========================================================*/
