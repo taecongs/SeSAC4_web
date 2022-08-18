@@ -1,0 +1,648 @@
+/*=========================================================
+    폰트 패밀리
+=========================================================*/
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+/*=========================================================
+    공통
+=========================================================*/
+:root{
+    /* 폰트 */
+    --font-Light:'Pretendard-Light';
+    --font-Medium:'Pretendard-SemiBold'; 
+    --font-Bold:'Pretendard-Black';
+
+    /* 컬러 */
+    --white-color:#fff;
+    --black-color:#0a0a0a;
+    --gray-color:#757575;
+    --main-color:#0359AE;
+    --sub-color:#12406a;
+    --error-color:#e00012;
+}
+
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+body{
+	margin:0;
+}
+
+
+
+/*=========================================================
+    Main Container CSS
+=========================================================*/
+.site {
+    display: flex;
+    -ms-display: flex;
+    flex-direction: column;
+    -ms-flex-direction: column;
+    height: 100vh;
+}
+
+
+.site-content {
+    flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    overflow:hidden;
+}
+
+
+.site-container{
+    /* max-width: 1520px; */
+	max-width:1600px;
+    margin:0 auto;
+    position: relative;
+    /* padding:0 40px; */
+}
+
+
+.site-container:after{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+@media screen and (max-width: 1550px) and (min-width: 1025px) {
+    .site-container{
+        max-width: 79.1666vw;
+        padding:0 2.083vw;
+    }
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+    .site-container{
+        max-width: 100%;
+        padding:0 4vw;
+    }
+}
+
+
+@media screen and (max-width: 767px) and (min-width: 1px) {
+    .site-container{
+        max-width: 100%;
+        padding:0 6.25vw;
+    }
+}
+
+
+
+/*=========================================================
+    Swiper Basic CSS
+=========================================================*/
+.swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+
+.swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    box-sizing: content-box;
+    transform: translate3d(0px, 0, 0);
+}
+
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+
+.site-main > .site-container{
+    overflow:visible;
+}
+
+
+@media screen and (min-width: 1025px) {
+    /* .site-main > .site-container{
+        min-height:600px;
+    } */
+}
+
+
+
+/*=========================================================
+	MainSlider
+=========================================================*/
+.MainBanner{
+	position:relative;
+	padding:170px 0 65px;
+}
+
+
+.MainBanner:before{
+	content:"";
+	width:45%;
+	height:100%;
+	/* background-color:#AEDBD6; */
+    background-color:var(--sub-color);
+    /* opacity:0.9; */
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+
+
+/*==== 제거 대상 ====*/
+.MainSliderText-slide{
+	transition-duration:0s !important;
+} 
+
+.MainSliderText-slide.swiper-slide-active{
+	z-index:2;
+}
+
+.MainSlider{
+	display:table;
+	table-layout:fixed;
+	width:100%;
+}
+
+.MainSliderThumb{
+	display:table-cell;
+	vertical-align:top;
+	width:859px;
+}
+
+.MainSliderText{
+	display:table-cell;
+	vertical-align:middle;
+	padding-right:100px;
+}
+
+
+
+/*=========================================================
+	MainSliderThumb
+=========================================================*/
+.MainSliderMeta{
+	height:57px;
+	padding-right:114px;
+	position:relative;
+}
+
+.MainSliderMetaArrow{
+	position:absolute;
+	top:0;
+	right:0;
+	overflow:hidden;
+}
+
+.MainSliderMeta-next{
+	width:57px;
+	height:57px;
+	background-color:var(--white-color);
+	position:relative;
+	float:left;
+	cursor:pointer;
+	transition:background-color 0.15s;
+}
+
+.MainSliderMeta-next{
+	width:57px;
+	height:57px;
+	background-color:var(--white-color);
+	position:relative;
+	float:left;
+	cursor:pointer;
+	transition:background-color 0.15s;
+}
+
+.MainSliderMeta-next:after{
+	content:"";
+	width:19px;
+	height:12px;
+	background-image:url(../image/svg/ico-slide-arrow-next.svg);
+	background-size:19px 12px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	transition:background-image 0.15s;
+}
+
+
+.MainSliderMeta-prev{
+	width:57px;
+	height:57px;
+	background-color:#fff;
+	position:relative;
+	float:left;
+	cursor:pointer;
+	transition:background-color 0.15s;
+}
+
+.MainSliderMeta-prev:after{
+	content:"";
+	width:19px;
+	height:12px;
+	background-image:url(../image/svg/ico-slide-arrow-prev.svg);
+	background-size:19px 12px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	transition:background-image 0.15s;
+}
+
+.ab_text{
+    overflow:hidden;
+    display:block;
+    position:absolute;
+    border:0;
+    width:1px;
+    height:1px;
+}
+
+@media screen and (min-width: 1025px) {
+	.MainSliderMeta-next:hover{
+		background-color:var(--main-color);
+	}
+
+	.MainSliderMeta-next:hover:after{
+		background-image:url(../image/svg/ico-slide-arrow-next-h.svg);
+	}
+	
+	.MainSliderMeta-prev:hover{
+		background-color:var(--main-color);
+	}
+
+	.MainSliderMeta-prev:hover:after{
+		background-image:url(../image/svg/ico-slide-arrow-prev-h.svg);
+	}
+}
+
+@media screen and (max-width: 768px) and (min-width: 1px) {
+	.MainBanner:before{
+		display:none;
+	}
+}
+
+
+
+
+/*=========================================================
+	재생&정지
+=========================================================*/
+.MainSliderMetaAuto{
+	position:absolute;
+	bottom:4px;
+	left:0;
+	overflow:hidden;
+	z-index:5;
+}
+
+button{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    border:none;
+    cursor: pointer;
+}
+
+
+.MainSliderMetaAuto-play{
+	display:block;
+	width:5px;
+	height:10px;
+	background-image:url(../image/svg/ico-play.svg);
+	background-size:5px 11px;
+	float:left;
+	margin-right:6px;
+}
+
+
+.MainSliderMetaAuto-pause{
+	display:block;
+	width:4px;
+	height:12px;
+	background-image:url(../image/svg/ico-pause.svg);
+	background-size:4px 12px;
+	float:left;
+	margin-right:6px;
+}
+
+
+.MainSliderMetaPaging{
+	position:absolute;
+	bottom:0;
+	left:46px;
+	padding-left:267px;
+}
+
+
+.MainSliderMetaPaging-bar{
+	height:2px;
+	background-color:#B7B7B7;
+	position:absolute;
+	top:50%;
+	left:0;
+	right:74px;
+	z-index:1;
+	transform:translateY(-50%);
+	overflow:hidden;
+}
+
+
+.MainSliderMetaPaging-bar:after{
+	content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--black2-color);
+    transform: translateX(-100%);
+}
+
+.is-Start.MainSliderMetaPaging-bar:after {
+	animation: slide-progress 4.8s linear forwards;
+}
+
+.is-StartVoid.MainSliderMetaPaging-bar:after {
+	animation: slide-progress 4s linear forwards;
+}
+
+
+@keyframes slide-progress {
+	0% {
+		transform: translateX(-100%);
+	}
+
+	100% {
+		transform: translateX(0);
+	}
+}
+
+.MainSliderMeta.is-Play .MainSliderMetaPaging-bar:after{
+    animation-play-state: running !important;
+}
+
+.MainSliderMeta.is-Stop .MainSliderMetaPaging-bar:after{
+    animation-play-state: paused !important;
+}
+
+
+/* 슬라이드 번호 1 / 3 */
+.swiper-pagination.swiper-pagination-fraction{
+	color:var(--white-color);
+	font-family:var(--font-Light);
+}
+
+
+@media screen and (max-width: 1920px) and (min-width: 1025px) {
+    .site-container{
+		padding:0;
+	}
+
+	.MainBanner{
+		padding:8.8541vw 0 3.3854vw;
+	}
+
+	.MainSliderThumb{
+		width:44.739vw;
+	}
+
+	.MainSliderText{
+		padding-right:5.2083vw;
+	}
+
+	.MainSliderMeta{
+		height:2.96875vw;
+		padding-right:5.9375vw;
+	}
+
+	.MainSliderMeta-next{
+		width:2.96875vw;
+		height:2.96875vw;
+	}
+
+	.MainSliderMeta-next:after{
+		width:0.9895vw;
+		height:0.625vw;
+		background-size:0.9895vw 0.625vw;
+	}
+
+	.MainSliderMeta-prev{
+		width:2.96875vw;
+		height:2.96875vw;
+	}
+
+	.MainSliderMeta-prev:after{
+		width:0.9895vw;
+		height:0.625vw;
+		background-size:0.9895vw 0.625vw;
+	}
+
+	.MainSliderMetaAuto{
+		bottom:0.20833vw;
+	}
+
+	.MainSliderMetaPaging{
+		padding-left:13.90625vw;
+	}
+
+	.MainSliderMetaPaging-bar{
+		right:3.8541vw;
+	}
+}
+
+
+@media screen and (max-width: 1290px) and (min-width: 1025px) {	
+	.MainSliderMetaAuto{
+		bottom:1px;
+	}
+}
+
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+	.MainBanner{
+		padding:15.0729vw 0 10.5vw;
+	}
+    
+	.MainSliderThumb{
+		width:48.739vw;
+	}
+    
+	.MainSliderMeta{
+		height:4.06875vw;
+		padding-right:8.13vw;
+	}
+    
+	.MainSliderMeta-next{
+		width:4.06875vw;
+		height:4.06875vw;
+	}
+
+	.MainSliderMeta-next:after{
+		width:1.2895vw;
+		height:0.825vw;
+		background-size:1.2895vw 0.825vw;
+	}
+
+	.MainSliderMeta-prev{
+		width:4.06875vw;
+		height:4.06875vw;
+	}
+
+	.MainSliderMeta-prev:after{
+		width:1.2895vw;
+		height:0.825vw;
+		background-size:1.2895vw 0.825vw;
+	}
+    
+	.MainSliderMetaAuto{
+		bottom:0.20833vw;
+	}
+    
+	.MainSliderMetaPaging{
+		padding-left:13.90625vw;
+	}
+    
+	.MainSliderMetaPaging-bar{
+		right:4.8541vw;
+	}    
+}
+
+
+@media screen and (max-width: 767px) and (min-width: 1px) {
+	.MainBanner{
+		padding:26.0729vw 0 10.5vw;
+	}
+	
+	.MainSlider{
+		display:block;
+		position:relative;
+		padding-bottom:58.8vw;
+	}
+    
+	.MainSliderThumb{
+		width:auto;
+		display:block;
+		position:relative;
+		z-index:5;
+	}   
+    
+	.MainSliderMeta{
+		height:10.06875vw;
+		padding-right:20.13vw;
+	}  
+    
+	.MainSliderMeta-next{
+		width:10.06875vw;
+		height:10.06875vw;
+		background-color:#EFEFEF;
+	}
+
+	.MainSliderMeta-next:after{
+		width:3.6895vw;
+		height:2.425vw;
+		background-size:3.6895vw 2.425vw;
+	}
+
+	.MainSliderMeta-prev{
+		width:10.06875vw;
+		height:10.06875vw;
+		background-color:#AEDBD6;
+	}
+
+	.MainSliderMeta-prev:after{
+		width:3.6895vw;
+		height:2.425vw;
+		background-size:3.6895vw 2.425vw;
+	} 
+    
+	.MainSliderMetaAuto{
+		bottom:3.20833vw;
+	}
+
+	.MainSliderMetaPaging{
+		padding-left:26.90625vw;
+		bottom:2.4vw;
+	}
+
+	.MainSliderMetaPaging-bar{
+		right:9.8541vw;
+	}    
+}
+
+
+
+
+
+
+

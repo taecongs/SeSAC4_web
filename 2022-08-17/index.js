@@ -9,6 +9,11 @@ app.use('/', express.static('public'));
 app.use(express.urlencoded({extended : true}));
 app.use(bodyParser.json());
 
+app.get('/', (req,res) => {
+    res.render('main.ejs');
+});
+
+
 app.get('/membership', (req,res) => {
     res.render('membership.ejs');
 });
