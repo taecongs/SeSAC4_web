@@ -209,8 +209,8 @@ body{
 	content:"";
 	width:45%;
 	height:100%;
-	/* background-color:#AEDBD6; */
-    background-color:var(--sub-color);
+	background-color:#AEDBD6;
+    /* background-color:var(--sub-color); */
     /* opacity:0.9; */
 	position:absolute;
 	top:0;

@@ -1,0 +1,425 @@
+/*=========================================================
+    폰트 패밀리
+=========================================================*/
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Pretendard-Light';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-SemiBold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Black';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+/*=========================================================
+    공통
+=========================================================*/
+:root{
+    /* 폰트 */
+    --font-Light:'Pretendard-Light';
+    --font-Medium:'Pretendard-SemiBold';
+    --font-Bold:'Pretendard-Black';
+
+    /* 컬러 */
+    --white-color:#fff;
+    --black-color:#0a0a0a;
+    --black2-color:#000;
+    --gray-color:#757575;
+    --main-color:#0359AE;
+    --sub-color:#0359AE;
+    --error-color:#e00012;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+ol, ul{
+	list-style: none;
+    padding:0;
+}
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+
+
+
+
+/*=========================================================
+    푸터
+=========================================================*/
+
+
+.site-footer{
+	background:#f7f7f7;
+    /* background:#fff; */
+	padding:33px 0 50px;
+	border-top:solid 1px #E8E8E8;
+	margin-top:150px;
+	position:relative;
+}
+
+
+.home .site-footer{
+	margin-top:0 !important;
+}
+
+
+
+/*=========================================================
+    푸터 로고
+=========================================================*/
+.FooterLogo{
+	width:212px;
+	height:90px;
+	background-image:url(../image/logo-2.png);
+	/* background-size:70px 70px; */
+	display:block;
+	margin:0 auto 23px;
+}
+
+
+
+
+/*=========================================================
+    푸터 네비
+=========================================================*/
+.FooterNavi{
+	margin-bottom:20px;
+	font-size:0;
+	line-height:0;
+	text-align:center;
+    font-family: var(--font-Bold);
+}
+
+.FooterNavi .menu-wrapper{
+	/* margin:0 -20px; */
+}
+
+.FooterNavi .menu-item{
+	display:inline-block;
+	padding:0 20px;
+	position:relative;
+}
+
+.FooterNavi .menu-item:after{
+	content:"";
+	width:1px;
+	height:13px;
+	background-color:#C3C3C3;
+	position:absolute;
+	top:50%;
+	right:0;
+	margin-top:1px;
+	transform:translateY(-50%);
+}
+
+.FooterNavi .menu-item:last-child:after{
+	display:none;
+}
+
+.FooterNavi .menu-item a{
+	font-size:16px;
+	line-height:1.4em;
+	color:#000000;
+}
+
+@media screen and (min-width: 1025px) {
+	.FooterNavi .menu-item a:hover{
+		text-decoration:underline;
+		font-weight:500;
+	}
+}
+
+
+
+
+/*=========================================================
+    푸터 정보
+=========================================================*/
+.FooterInfo{
+	max-width: 700px;
+	margin:0 auto 10px;
+	font-size:0;
+	line-height:0;
+	text-align:center;
+    font-family: var(--font-Light);
+}
+
+.FooterInfo-list{
+	margin:-3px -6px;
+	overflow:hidden;
+}
+
+.FooterInfo-item{
+	display:inline-block;
+	padding:3px 6px;
+	position:relative;
+	font-size:15px;
+	line-height:1.4em;
+	color:#000000;
+}
+
+.FooterInfo-item a{
+	color:#000000;
+}
+
+
+
+
+/*=========================================================
+    푸터 카피라이터
+=========================================================*/
+.FooterCopy{
+	font-size:14px;
+	line-height:1.5em;
+	color:rgba(0,0,0,0.49);
+	text-align:center;
+}
+
+
+
+
+
+/*=========================================================
+    푸터 반응형 작업
+=========================================================*/
+@media screen and (max-width: 1920px) and (min-width: 1025px) {
+	.site-footer{
+		padding:1.71875vw 0 2.6041vw;
+		margin-top:7.8125vw;
+	}
+	
+	/*Logo*/
+	.FooterLogo{
+		width:3.64583vw;
+		height:3.64583vw;
+		background-size:3.64583vw 3.64583vw;
+		margin:0 auto 1.19791vw;
+	}
+	
+	/*navi*/
+	.FooterNavi{
+		margin-bottom:1.04166vw;
+	}
+
+	.FooterNavi .menu-wrapper{
+		margin:0 -1.04166vw;
+	}
+
+	.FooterNavi .menu-item{
+		padding:0 1.04166vw;
+	}
+
+	.FooterNavi .menu-item:after{
+		height:0.67708vw;
+	}
+
+	.FooterNavi .menu-item a{
+		font-size:0.83333vw;
+	}
+	
+	/*info*/
+	.FooterInfo{
+		max-width: 36.458vw;
+		margin:0 auto 1.5625vw;
+	}
+
+	.FooterInfo-list{
+		margin:-0.15625vw -0.3125vw;
+	}
+
+	.FooterInfo-item{
+		padding:0.15625vw 0.3125vw;
+		font-size:0.78125vw;
+	}
+
+	/*copy*/
+	.FooterCopy{
+		font-size:0.72916vw;
+	}
+}
+
+@media screen and (max-width: 1400px) and (min-width: 1025px) {
+	.FooterCopy{
+		font-size:10px;
+	}
+}
+
+@media screen and (max-width: 1300px) and (min-width: 1025px) {
+	.FooterNavi .menu-item a{
+		font-size:11px;
+	}
+	
+	.FooterNavi .menu-item:after{
+		height:9px;
+		margin-top:0;
+	}
+	
+	.FooterInfo{
+		max-width:474px;
+	}
+	
+	.FooterInfo-item{
+		font-size:10px;
+	}
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+	.site-footer{
+		padding:3.71875vw 0 5.6041vw;
+		margin-top:10.8125vw;
+	}
+	
+	/*Logo*/
+	.FooterLogo{
+		width:6.64583vw;
+		height:6.64583vw;
+		background-size:6.64583vw 6.64583vw;
+		margin:0 auto 3.19791vw;
+	}
+	
+	/*navi*/
+	.FooterNavi{
+		margin-bottom:1.84166vw;
+	}
+
+	.FooterNavi .menu-wrapper{
+		margin:0 -2.04166vw;
+	}
+
+	.FooterNavi .menu-item{
+		padding:0 2.04166vw;
+	}
+
+	.FooterNavi .menu-item:after{
+		height:1.267708vw;
+		margin-top:0;
+	}
+
+	.FooterNavi .menu-item a{
+		font-size:1.583333vw;
+	}
+	
+	/*info*/
+	.FooterInfo{
+		max-width: 70.458vw;
+		margin:0 auto 3.5625vw;
+	}
+
+	.FooterInfo-list{
+		margin:-0.35625vw -1.3125vw;
+	}
+
+	.FooterInfo-item{
+		padding:0.35625vw 1.3125vw;
+		font-size:1.408125vw;
+	}
+
+	/*copy*/
+	.FooterCopy{
+		font-size:1.372916vw;
+	}
+}
+
+@media screen and (max-width: 767px) and (min-width: 1px) {
+	.site-footer{
+		padding:7.71875vw 0 9.6041vw;
+		margin-top:18.8125vw;
+	}
+	
+	/*Logo*/
+	.FooterLogo{
+		width:12.64583vw;
+		height:12.64583vw;
+		background-size:12.64583vw 12.64583vw;
+		margin:0 auto 5.19791vw;
+	}
+	
+	/*navi*/
+	.FooterNavi{
+		margin-bottom:3.84166vw;
+		overflow:hidden;
+	}
+
+	.FooterNavi .menu-wrapper{
+		margin:-0.9vw -4.04166vw;
+	}
+
+	.FooterNavi .menu-item{
+		padding:0.9vw 4.04166vw;
+	}
+
+	.FooterNavi .menu-item:after{
+		height:2.767708vw;
+		margin-top:0;
+	}
+
+	.FooterNavi .menu-item a{
+		font-size:3.4183333vw;
+	}
+	
+	/*info*/
+	.FooterInfo{
+		max-width: 100%;
+		margin:0 auto 6.5625vw;
+	}
+
+	.FooterInfo-list{
+		margin:-0.65625vw -1.3125vw;
+	}
+
+	.FooterInfo-item{
+		padding:0.65625vw 1.3125vw;
+		font-size:3.2408125vw;
+	}
+
+	/*copy*/
+	.FooterCopy{
+		font-size:3.2372916vw;
+	}
+}

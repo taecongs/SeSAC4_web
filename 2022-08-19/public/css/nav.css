@@ -51,7 +51,7 @@
 :root{
     /* 폰트 */
     --font-Light:'Pretendard-Light';
-    --font-Medium:'Pretendard-SemiBold';  
+    --font-Medium:'Pretendard-SemiBold';
     --font-Bold:'Pretendard-Black';
 
     /* 컬러 */
@@ -82,6 +82,7 @@ img {
 	vertical-align: middle;
 	max-width: 100%;
 }
+
 
 /*=========================================================
     컨테이너
@@ -137,7 +138,7 @@ img {
 .headerArea .nav .navbar li {
 	color:var(--black2-color);
 	transition: .2s linear;
-    font-family:var(--font-Light);
+    font-family:var(--font-Bold);
 }
 
 .headerArea .nav .navbar li:hover{
@@ -205,13 +206,10 @@ img {
 .headerArea .nav .utill li:first-child a {
 	display: block;
 	color:var(--black-color);
-	/* width: 120px; */
-	width:65px;
-	/* border: 1px solid var(--white-color); */
-	/* border-radius: 20px; */
+	width:30px;
 	text-align: center;
 	line-height: 33px;
-    font-family:var(--font-Light);
+    font-family:var(--font-Bold);
 	letter-spacing: 1px;
 	font-size:16px;
 }
@@ -222,27 +220,27 @@ img {
 }
 
 .headerArea .nav .utill li:first-child a.first_icon:before {
-	/* display: inline-block;
-	width: 45px;
-	height: 45px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
 	margin-right: 6px;
 	margin-top: -5px;
 	vertical-align: middle;
-	background: url(../image/icon/loginPassword_w.png) no-repeat;
+	background: url(../image/icon/loginPassword.png) no-repeat;
 	background-size: contain;
-	content: ''; */
+	content: '';
 }
 
 .headerArea .nav .utill li:last-child a.second_icon:before {
-	/* display: inline-block;
-	width: 45px;
-	height: 45px;
+	display: inline-block;
+	width: 40px;
+	height: 40px;
 	margin-right: 6px;
 	margin-top: -5px;
 	vertical-align: middle;
-	background: url(../image/icon/loginJoin_w.png) no-repeat;
+	background: url(../image/icon/loginMember.png) no-repeat;
 	background-size: contain;
-	content: ''; */
+	content: '';
 }
 
 
@@ -306,8 +304,15 @@ img {
 =========================================================*/
 @media (max-width: 1199px) {
     .pc_logo{
-        display:none;
+        /* display:none; */
+		display:inline-block;
+		position:relative;
+		top:-60px;
     }
+
+	.pc_logo h1.logo{
+		margin:0;
+	}
 
 	.headerArea .nav .nav-icon {
 		display: inline-block;
@@ -359,30 +364,79 @@ img {
 	.headerArea .nav .utill.mo ul {
 		display: flex;
 		align-items: center;
+		position:relative;
 
 	}    
 
+
+    /*** 모바일 로그인 & 회원가입 버튼 공통 ***/
 	.headerArea .nav .utill.mo ul li{
-	    /* border: 1px solid var(--gray-color);
-		width:130px;
-	    border-radius: 20px;		 */
-		display: flex;
-		align-items: center;
-		height:20px;		
+        width:33.3333%;
+		border:1px solid var(--black-color);
+		font-size:16px;
+		text-align: center;
+		box-sizing: border-box;
+		border-radius: 5px;
+		margin-right:10px;
+		padding:5px 0;
 	}
 
 	.headerArea .nav .utill.mo ul li a {
-		text-align:left;
 		display: block;
 		color:var(--black-color);
 		line-height: 33px;
 		font-family:var(--font-Light);
 		letter-spacing: 1px;
-		font-size:16px;		
 	}
 
-	.headerArea .nav .utill.mo ul li a:hover{
-		color:var(--main-color);
+	.headerArea .nav .utill li:first-child a{
+		width:60px;
+	}
+
+	/*** 로그인 버튼 ***/
+	.headerArea .nav .utill.mo ul li.login_bt:hover{
+		background:var(--main-color);
+		color:var(--white-color);
+		border:0;
+	}
+
+	.headerArea .nav .utill.mo ul li.login_bt:hover a{
+		color:var(--white-color);
+	}
+
+	/*** 회원가입 버튼 ***/
+	.headerArea .nav .utill.mo ul li.member_bt:hover{
+		background:var(--black-color);
+		color:var(--white-color);
+		border:0;
+	}
+
+	.headerArea .nav .utill.mo ul li.member_bt:hover a{
+		color:var(--white-color);
+	}	
+
+
+
+
+	.headerArea .nav .utill li:first-child{
+		justify-content: center;
+	}
+
+	.headerArea .nav .utill li:last-child a{
+		margin-left:0;
+	}
+
+	a.moblie_arrow:after{
+		font-size:16px;
+		background:url(../image/icon/icon_navi.png);
+		background-size:16px 16px;
+		background-position: center center;
+		background-repeat: no-repeat;
+		content: '';
+		display: block;
+		width:16px;
+		position:absolute;
+		right:0;
 	}
 
 
@@ -391,7 +445,9 @@ img {
 		height: 100px;
 	}
 
-	.headerArea .nav .navbar>li {
+	.headerArea .nav .navbar > li {
+		position:relative;
+		top:-40px;
 		display: block;
 		text-align: left;
 		margin: 0;
