@@ -47,6 +47,7 @@ img{
 }
 
 body{
+	height: 100%;
 	margin:0;
 }
 
@@ -71,7 +72,6 @@ footer {
 header.scrollDown { 
     transform: translate(0, -160px);
 }    
-
 
 
 /*=========================================================
@@ -1155,7 +1155,7 @@ button{
 
 
 /*hover*/
-@media screen and (max-width: 1920px) and (min-width: 1025px) {
+@media screen and (max-width: 3000px) and (min-width: 1025px) {
 	.MainInfluencerItem-link:hover .MainInfluencerItemNameText{
 		width:100%;
 	}
@@ -1570,24 +1570,24 @@ button{
 @media (max-width: 1023px) {
 	.main3_0 .main3_in1 {
 		padding: 20px;
-	  }
-   
-	  .main3_0 .main3_in1 li {
+    }
+
+	.main3_0 .main3_in1 li {
 		width: 100%;
 		padding: 30px;
-	  }
-   
-	  .main3_0 .main3_in1 li:nth-child(1) {
+	}
+
+	.main3_0 .main3_in1 li:nth-child(1) {
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		border-right: 0;
 		background: url(../image/icon/main_b01-2.png) no-repeat right 30px top 25%;
 		height:auto;
-	  }
-   
-	  .main3_0 .main3_in1 li:nth-child(2) {
+	}
+
+	.main3_0 .main3_in1 li:nth-child(2) {
 		background: url(../image/icon/main_b02.png) no-repeat right 30px top 50%;
 		height:auto;
-	  }
+	}
 }
 
 

@@ -22,6 +22,10 @@ app.get('/login', (req,res) => {
     res.render('login.ejs');
 });
 
+app.get('/notice_write', (req,res) => {
+    res.render('write.ejs');
+});
+
 
 app.listen(port, () => {
     console.log('Server port : ', port);

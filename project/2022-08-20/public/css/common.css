@@ -66,6 +66,26 @@ img {
 }
 
 
+#body-wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+#body-content {
+	margin-top: 100px;
+	padding-bottom: 100px;
+}
+
+#footer {
+	width: 100%;
+	/* height: 152px; */
+	position: absolute;
+	transform : translateY(100%);
+	bottom: 0;
+	left: 0;
+}
+
+
 /*=========================================================
     컨테이너
 =========================================================*/
