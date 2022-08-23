@@ -26,6 +26,7 @@
     --font-Bold:'MaplestoryOTFBold';
 
     /* 컬러 */
+    --background-color:#ededed;
     --white-color:#fff;
     --black-color:#0a0a0a;
     --black2-color:#111;
@@ -49,10 +50,10 @@ html, body {
 }
 
 body{
+	height: 100%;    
 	margin:0;
 	padding:0;
-	/* display: flex;
-	flex-direction: column; */
+	background:var(--background-color);
 }
 
 ol, ul{
@@ -88,24 +89,14 @@ footer {
     z-index:20;
 	
 	/* 컨텐츠 적을 시 absolute */
-	position: absolute;
+	/* position: absolute;
 	left:0;
-	bottom:0;
+	bottom:0; */
 
 	/* 컨텐츠 많을 시 relative */
-	/* position:relative; */
+	position:relative;
 }
 
-
-section{
-	width:100%;
-	border:1px solid #ddd;
-
-}
-
-.page-content{
-	background:powderblue;
-}
 
 /*=========================================================
     컨테이너
@@ -488,6 +479,255 @@ section{
 }
 
 
+
+
+
+/*=========================================================
+    섹션
+=========================================================*/
+section{
+	width:100%;
+    margin-top:5%;
+    margin-bottom:5%;
+}
+
+
+.page-content{
+    background:var(--white-color);
+    border-radius: 20px;
+    padding:2% 5%;
+}
+
+
+
+
+/*=========================================================
+    페이지 타이틀
+=========================================================*/
+.MainSectionHeader{
+	text-align:center;
+	margin-bottom:53px;
+}
+
+.MainSectionHeader-title{
+	font-size:38px;
+	line-height:1.3em;
+	color:var(--black2-color);
+	font-family: var(--font-Medium);
+	margin-bottom:0;
+}
+
+.MainSectionHeader-link{
+	color:var(--black2-color);
+}
+
+.MainSectionHeader-sub{
+	font-size:18px;
+	line-height:1.4em;
+	color:#333333;
+	margin-top:10px;
+	font-family: var(--font-Light);
+}
+
+
+
+
+/*=========================================================
+    폼 관련
+=========================================================*/
+.form-box .form > li{
+    display:flex;
+    flex-wrap:wrap;
+    margin:0 0 30px 0;
+}
+
+.form-box .input{
+    width:calc(50% - 74px);
+    margin:0 37px;
+    position:relative;
+}
+
+
+.form-box .form .label{
+    display:block;
+    margin-bottom:14px;
+    font-size:16px;
+    letter-spacing: 1px;
+    color:var(--black2-color);
+    font-family: var(--font-Light);
+}
+
+.form-box .form .basic{
+    width:100%;
+    height:60px;
+    padding:0 30px;
+    border:1px solid #d9d9d9;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    outline:none;
+    background:var(--white-color);
+    color:rgba(0,0,0, 0.5);
+    font-family: var(--font-Light);
+}
+
+/* textarea */
+.form-box .form .t_basic{
+    height:auto;
+    padding-top:20px !important;
+
+}
+
+.form-box .form .basic:focus{
+    border:2px solid var(--main-color);
+}
+
+
+.form-box .full{
+    width:calc(100% - 74px);
+    margin:0 37px;
+    position:relative;
+}
+
+/* 카테 고리 */
+.wpcf7-list-item{
+    display:inline-block;
+    margin:0 0 0 1rem;
+}
+
+span.wpcf7-list-item-label{
+    font-family: var(--font-Light);
+    color:var(--black2-color);
+}
+
+input[type="checkbox"]{
+    display:none;
+}
+
+.wpcf7-list-item-label::before{
+    content:"";
+    transition: all 0.3s;
+    display:inline-block;
+    width:14px;
+    height:14px;
+    background:var(--white-color);
+    border:1px solid #ccc;
+    border-radius: 50%;
+    margin-right:8px;
+    padding:2px;
+    transform: translateY(4px);
+}
+
+input[type="checkbox"]:checked ~ .wpcf7-list-item-label::before{
+    width:4px;
+    height:4px;
+    border:6px solid var(--main-color);
+}
+
+
+/* 대표 사진 */
+.file-box{
+    margin-top:7px;
+    display:flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.form-box .form .file-box .upload-name{
+    width:calc(100% - 230px);
+}
+
+.file-box label{
+    background:var(--black2-color);
+    color:var(--white-color);
+}
+
+.file-box button{
+    background:var(--white-color);
+}
+
+.file-box label, .file-box button{
+    width:104px;
+    line-height: 58px;
+    border:1px solid var(--black2-color);
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size:16px;
+    font-family: var(--font-Light);
+}
+
+.file-box input[type="file"]{
+    position:absolute;
+    width:1px;
+    height:1px;
+    padding:0;
+    margin:-1px;
+    overflow: hidden;
+    clip:rect(0,0,0,0);
+    border:0;
+    top:50%;
+    right:10px;
+}
+
+
+/* 목록가기 | 등록하기 */
+.form-box .bt-box{
+    text-align: center;
+    margin:50px 0;
+}
+
+.form-box .bt-box .bt_list{
+    border-color:var(--main-color);
+    background:var(--white-color);
+    color:var(--main-color);
+    font-family: var(--font-Light);
+    /* border-radius: 20px; */
+}
+
+button.bt_on{
+    border-color:var(--black2-color);
+    background:var(--white-color);
+    color:var(--black2-color);
+    font-family: var(--font-Light);   
+    /* border-radius: 20px;  */
+}
+
+
+.form-box .bt-box .bt_list:hover{
+    background:var(--main-color);  
+    color:var(--white-color);  
+}
+
+
+button.bt_on:hover{
+    background:var(--black2-color);  
+    color:var(--white-color);  
+}
+
+
+/* 등록하기 */
+.form-box .bt-box button{
+    font-size:16px;
+    letter-spacing: 1px;
+    padding:18.5px 59px;
+    margin:0 5px;
+    cursor: pointer;
+}
+
+
+/* 목록가기 */
+.form-box .bt-box a{
+    font-size:16px;
+    letter-spacing: 1px;
+    padding:18.5px 59px;
+    border:2px solid var(--main-color);
+    margin:0 5px;
+    cursor: pointer;
+}
+
+
+
+
 /*=========================================================
     푸터
 =========================================================*/
@@ -725,29 +965,6 @@ footer > .layout > .site-box > .relate-site > .box-1.active + ul {
 		font-size:12px;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

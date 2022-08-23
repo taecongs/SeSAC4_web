@@ -27,6 +27,12 @@ app.get('/common', (req,res) => {
 });
 
 
+app.get('/ootd-notice', (req,res) => {
+    res.render('ootd-notice.ejs');
+});
+
+
+
 app.listen(port, () => {
     console.log('Server port : ', port);
 });

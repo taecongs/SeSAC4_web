@@ -26,9 +26,16 @@
     --font-Bold:'MaplestoryOTFBold';
 
     /* 컬러 */
+    --background-color:#ededed;
     --white-color:#fff;
     --black-color:#0a0a0a;
+    --black2-color:#111;
+
     --gray-color:#757575;
+    --gray-color2:#414141;
+    --gray-color3:#676767;
+    --gray-color4:#595959;
+
     --main-color:#0359AE;
     --sub-color:#0359AE;
     --error-color:#e00012;
