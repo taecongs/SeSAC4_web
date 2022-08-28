@@ -32,6 +32,11 @@ app.get('/ootd-notice', (req,res) => {
 });
 
 
+app.get('/mypage', (req,res) => {
+    res.render('mypage.ejs');
+});
+
+
 
 app.listen(port, () => {
     console.log('Server port : ', port);
