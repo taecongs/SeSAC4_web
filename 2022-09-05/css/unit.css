@@ -1,0 +1,70 @@
+.box{
+  margin-bottom:100px;
+}
+
+.px{
+  width:500px;
+  height:500px;
+  background:yellowgreen;
+}
+
+.pct-parent{
+  width:500px;
+  height:500px;
+  background:plum;
+}
+
+.pct-child{
+  width:50%;
+  height:50%;
+  background:palegreen;
+}
+
+
+.em{
+  font-size:2em;
+}
+
+
+.case1{
+  font-size:20px;
+}
+
+.case2{
+  font-size:10px;
+}
+
+.em-3{
+  font-size:3em;
+}
+
+
+.vw{
+  width:20vw;
+  height:20vw;
+  background:coral;
+}
+
+.vh{
+  height:20vh;
+  width:20vh;
+  background:skyblue;
+}
+
+.test{
+  font-size:30px;
+}
+
+/* ~ 768px 까지 적용 */
+/* ~ 768px 보다 작아지면 X */
+@media screen and (min-width:768px){
+  .px{
+    width:900px;
+    height:900px;
+    background:pink;
+  }
+
+  .test{
+    font-size:10vw;
+  }
+}

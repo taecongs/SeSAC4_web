@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/9ad05a77c3.js" crossorigin="anonymous"></script>
+
+    <script defer src="../js/common.js"></script>
+    <script defer src="../js/community.js"></script>
+    <link rel="stylesheet" href="../css/community.css" />
+    <title>OOTD 게시글 작성</title>
+</head>
+
+<body>
+    <div id="body-wrapper">
+        <div id="body-content">
+            <header id="act_header">
+                <div class="headerArea">
+                    <div class="container">
+                        <div class="nav">
+                            <div class="moblie_logo">
+                                <h1 class="logo">
+                                    <a href="http://localhost:8000/">
+                                        <img src="../image/logo-5.png" alt="룩포웨더">
+                                    </a>
+                                </h1>
+                            </div>
+
+
+                            <div class="nav-icon">
+                                <div></div>
+                            </div>
+
+                            <ul class="navbar">
+                                <div class="pc_logo">
+                                    <h1 class="logo">
+                                        <a href="http://localhost:8000/">
+                                            <img src="../image/logo-5.png" alt="룩포웨더">
+                                        </a>
+                                    </h1>
+                                </div>
+                                <li id="menu-item-130"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130">
+                                    <a class="moblie_arrow" href="http://localhost:8000/">HOME</a>
+                                </li>
+
+                                <li id="menu-item-41"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-41">
+                                    <a href="#">WEATHER</a>
+                                </li>
+
+                                <li id="menu-item-40"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-40">
+                                    <a href="#">OOTD</a>
+                                </li>
+
+                                <li id="menu-item-131"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-131">
+                                    <a href="#">COMMUNITY</a>
+                                </li>
+
+                                <li id="menu-item-132"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-132">
+                                    <a href="#">MYPAGE</a>
+                                </li>
+
+                                <li class="utill mo">
+                                    <ul>
+                                        <li class="login_bt"><a href="#">로그인</a></li>
+                                        <li class="member_bt"><a href="#">마이페이지</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+
+                            <ul class="utill pc">
+                                <li>
+                                    <a class="first_icon" href="#">로그인</a>
+                                    <a class="second_icon" href="#">마이페이지</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            <section>
+                <div class="container">
+                    <div class="page-content">
+                        <!-- 타이틀 -->
+                        <div class="MainSectionHeader">
+                            <h2 class="MainSectionHeader-title">
+                                <a class="MainSectionHeader-link" href="#">
+                                    COMMUNITY
+                                </a>
+                            </h2>
+                            <div class="MainSectionHeader-sub">
+
+                            </div>
+                        </div>
+
+                        <!-- 컨텐츠 -->
+                        <div class="box_write">
+                            <form name="WriteFrm" method="post">
+                                <fieldset>
+                                    <legend class="blind">글쓰기</legend>
+                                    <textarea id="contents" name="memoPost.content" class="tf_write"
+                                        placeholder="로그인이 안되었을 시 Alert 창 띄우고 로그인 페이지 이동 / 로그인이 되어있다면 작성"></textarea>
+                                    <div class="set_attach">
+                                        <button type="button" class="btn_submit">작성하기</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div>                          
+
+                        <div class="content">
+                            <div class="content-main">
+                                <div class="card-grid">
+                                    <article class="card">
+                                        <div class="card-header">
+                                            <div>
+                                                <span><img src="../image/profile.gif"/></span>
+                                                <!-- 작성한 아이디 또는 닉네임이 들어 갈 곳 -->
+                                                <h3>작성 아이디</h3>
+                                            </div>
+                                        </div>
+
+                                        <!-- 작성된 내용이 들어 갈 곳 -->
+                                        <div class="card-body">
+                                            <p class="card-txt">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis doloribus similique enim dolor ut corrupti culpa ab cum quibusdam cumque error, at aperiam, dolore quaerat sunt numquam, delectus atque eum.</p>
+                                        </div>
+
+                                        <div class="card-footer">
+                                            <button class="reply" onclick="clickshow(this,'reply_comment')">
+                                                댓글
+                                            </button>
+
+                                            <div class="feed_info">
+                                                <div class="feed_state">
+                                                    <ul class="link_list">
+                                                        <li>
+                                                            <button type="button" class="state_btn f_icon">
+                                                                <img class="feed_icon" src="../image/icon/heart.png" alt="like_img">
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>   
+                                        </div>
+
+                                        <div class="comment_list comments_margin">
+                                            <ul class="comments_info comment_list_ul">
+                                                <li>
+                                                    <div class="comments_tit">
+                                                        <span class="user_id"></span>
+                                                        <span class="comment_contents"></span>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+
+                                        <div class="community_click">
+                                            <form id="reply_comment" class="reply_closed" style="display:none;">
+                                                <div class="post_comment">
+                                                    <input id="post_comment_input" type="text" placeholder="댓글 달기..."
+                                                        name="reply" />
+                                                    <button type="button" class="post_comment_btn" onclick="wirteReply()">게시</button>
+                                                </div>
+                                            </form>
+                                        </div>   
+                                    </article>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <footer class="footer">
+            <div class="layout con">
+                <div class="menu">
+                    <ul class="row">
+                        <li class="cell">룩포웨더</li>
+                        <li class="cell">날씨정보</li>
+                        <li class="cell">코디리뷰</li>
+                        <li class="cell">커뮤니티</li>
+                        <li class="cell">마이페이지</li>
+                    </ul>
+                </div>
+                <div class="address">
+                    <div class="line_txt">조장 : 함유정</div>
+                    <div>팀원 : 방장원, 서윤지, 정예현, 최상훈</div>
+                </div>
+                <div class="copy">
+                    Copyrightⓒ 록포웨더. All Rights Reserved.
+                </div>
+                <div class="site-box row">
+                    <div class="relate-site cell">
+                        <div class="box-1">
+                            패밀리사이트
+                        </div>
+                        <ul>
+                            <a href="#" onclick="return false">
+                                <li>링크사이트1</li>
+                            </a>
+                            <a href="#" onclick="return false">
+                                <li>링크사이트2</li>
+                            </a>
+                            <a href="#" onclick="return false">
+                                <li>링크사이트3</li>
+                            </a>
+                            <a href="#" onclick="return false">
+                                <li>링크사이트4</li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

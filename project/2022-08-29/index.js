@@ -37,6 +37,15 @@ app.get('/mypage', (req,res) => {
 });
 
 
+app.get('/community', (req,res) => {
+    res.render('community.ejs');
+});
+
+app.get('/community2', (req,res) => {
+    res.render('community2.ejs');
+});
+
+
 
 app.listen(port, () => {
     console.log('Server port : ', port);
