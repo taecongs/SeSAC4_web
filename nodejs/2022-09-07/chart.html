@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <title>소켓</title>
+</head>
+<style>
+    .chat-list{
+        background:skyblue;
+        width:50%;
+        height:40vh;
+        padding: 10px;
+        opacity: 0.6;
+        margin-bottom:1%;
+    }
+
+    /* .one:nth-child(2n+1){
+        background:yellow;
+        width:30%;
+        position:relative;
+        left:68%;
+        padding:5px;
+
+    }    
+
+    .one{
+        background:#fff;
+        width:30%;
+        padding:5px;
+    } */
+
+    .my-chat{
+        text-align: right;
+    }
+
+    .my-chat div{
+        background:yellow;
+        display:inline-block;
+        margin-bottom:10px;
+        padding:5px 10px;
+    }
+
+    .other-chat div{
+        background:#fff;
+        display:inline-block;
+        margin-bottom:10px;
+        padding:5px 10px;
+    }
+
+    p{
+        text-align: center;
+        margin:0;
+        font-size:12px;
+        
+    }
+
+
+
+
+
+</style>
+<body>
+    <div id="chat-list" class="chat-list"></div>
+
+    <input type="text" id="message">
+    <button type="button" onclick="send();">전송</button>
+
+    <script>
+        let id = '';
+        let socket = io.connect();
+
+        socket.on('info', function(data){
+            console.log(data);
+            id = data;
+        });
+
+
+
+        function send(){
+            console.log(id);
+            let msg = document.getElementById('message').value;
+            // socket.emit('send', {id, msg});
+            socket.emit('send', {id : id, msg : msg});
+            document.getElementById('message').value = '';
+        }
+
+
+        socket.on('newMessage', function(data){
+            // data = {id : ~~~, msg : ~~~};
+            let chat_list = document.getElementById('chat-list');
+
+            let div = document.createElement('div');
+            let div_chat = document.createElement('div');
+            
+            div_chat.textContent = data.msg;
+            
+
+            // data.id -> 메시지를 보내는 사람 | id -> 접속한 사람
+            // 동일하다면 내가 채팅 친다.
+            // 동일하지 않다면 타인이 채팅을 친다.
+            if(data.id == id){
+                div.classList.add('my-chat');
+            }else{
+                div.classList.add('other-chat');
+            }
+
+
+            div.appendChild(div_chat);
+            chat_list.appendChild(div);
+        });
+
+
+        socket.on('welcome', function(data){
+            let chat_list = document.getElementById('chat-list');
+            let p = document.createElement('p');
+
+            p.textContent = data;
+
+            chat_list.appendChild(p);
+        });
+
+    </script>
+</body>
+</html>

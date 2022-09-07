@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <title>소켓</title>
+</head>
+<body>
+    <h2>Hello World!</h2>
+    <button type="button" onclick="helloClick();">Hello</button>
+    <button type="button" onclick="studyClick();">Study</button>
+    <button type="button" onclick="byeClick();">Bye</button>
+    <h5 id="inner"></h5>
+
+    <script>
+        let socket = io.connect();
+
+
+
+        // function send(e){
+        // e : hello
+        // socket.emit('hello', hello);
+        // socket.emit('stduy', 'study');            
+        //     socket.emit(e, e);
+        // }
+
+
+
+        // Hello
+        function helloClick(){
+            socket.emit('hello', 'Hello');
+        }
+
+        socket.on('hello', function(data){
+            console.log('Client : ', data);
+            document.querySelector('#inner').innerHTML = 'Client : ' + data;
+        });
+
+
+        // Study
+        function studyClick(){
+            socket.emit('study', 'Study');
+        }
+
+        socket.on('study', function(data){
+            console.log('Client : ', data);
+            document.querySelector('#inner').innerHTML = 'Client : ' + data;
+        });
+
+
+        // Bye
+        function byeClick(){
+            socket.emit('bye', 'Bye');
+        }
+
+        socket.on('bye', function(data){
+            console.log('Client : ', data);
+            document.querySelector('#inner').innerHTML = 'Client : ' + data;
+        });
+    </script>
+</body>
+</html>

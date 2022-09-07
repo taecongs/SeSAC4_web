@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <title>소켓</title>
+</head>
+<body>
+    <button type="button" onclick="btnClick();">클릭</button>
+
+    <script>
+        let socket = io.connect();
+
+        /*============================================================
+        on의 역활은? read 
+        connect : 이벤트명, function(){} : 콜백함수
+        ============================================================*/
+        socket.on('connect', function(){
+            console.log('server connected!');
+        });
+
+
+        /*============================================================
+        index.js 20열에 정의 된 server hello를 hello 이벤트가 담는다.
+        ============================================================*/        
+        socket.on('hello', function(data){
+            console.log('data : ', data);
+        });
+
+
+
+        function btnClick(){
+            // console.log('click');
+            socket.emit('click', 'Click!');
+        }
+
+        socket.on('clickResponse', function(data){
+            console.log('response : ', data);
+        });
+    </script>
+</body>
+</html>
