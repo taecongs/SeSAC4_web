@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <title>Socket 복습-3</title>
+</head>
+<style>
+    .chat-list{
+        background:skyblue;
+        width:50%;
+        height:40vh;
+        padding: 10px;
+        opacity: 0.6;
+        margin-bottom:1%;
+    }    
+
+    input#message{
+        width:47%;
+    }
+
+    p{
+        text-align: center;
+        margin:0;
+        font-size:12px;
+    }
+
+    .chat-list div div {
+        display: inline-block; 
+        padding:3px; 
+    }
+
+    .my-chat {
+        text-align: right;
+    }
+
+    .my-chat div {
+        background-color: yellow; 
+    }
+
+    .other-chat div { 
+        background-color: white;
+    }    
+</style>
+<body>
+    <div id="chat-list" class="chat-list"></div>
+    <input type="text" id="message">
+    <button type="button" onclick="send();">전송</button>    
+
+    <script>
+        let id = '';
+        let socket = io.connect();
+
+        socket.on('info', function(data){
+            console.log(data);
+            id = data;
+        })
+
+        function send(){
+            console.log(id);
+            let msg = document.getElementById('message').value;
+
+            socket.emit('send', {id : id, msg : msg});
+            document.getElementById('message').value =  '';
+        }
+        
+
+        // ~~~ 님이 입장하셨습니다.
+        socket.on('welcome', function(data){
+            let chat_list = document.getElementById('chat-list');
+            let p = document.createElement('p');
+
+            p.textContent = data;
+
+            chat_list.appendChild(p);
+        });
+
+
+        socket.on('newMessage', function(data){
+            let chat_list = document.getElementById('chat-list');
+            let div = document.createElement('div');
+            let div_chat = document.createElement('div');
+
+            div_chat.textContent = data.msg;
+
+            if(data.id == id){
+                div.classList.add('my-chat');
+            } else{
+                div.classList.add('other-chat');
+            }
+
+            div.appendChild(div_chat);
+            chat_list.appendChild(div);
+        })
+    </script>
+</body>
+</html>
