@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
+    <title>소켓</title>
+</head>
+<style>
+    .chat-list{
+        background:skyblue;
+        width:50%;
+        height:40vh;
+        padding: 10px;
+        opacity: 0.6;
+        margin-bottom:1%;
+    }
+
+    .my-chat{
+        text-align: right;
+    }
+
+    .my-chat div{
+        background:yellow;
+        display:inline-block;
+        margin-bottom:10px;
+        padding:5px 10px;
+    }
+
+    .other-chat div{
+        background:#fff;
+        display:inline-block;
+        margin-bottom:10px;
+        padding:5px 10px;
+    }
+
+    p{
+        text-align: center;
+        margin:0;
+        font-size:12px;
+        
+    }
+
+
+
+
+
+</style>
+<body>
+    <div id="chat-list" class="chat-list"></div>
+
+    <select id="nick-list">
+        <option value="전체">전체</option>
+    </select>
+    <input type="text" id="message">
+    <button type="button" onclick="send();">전송</button>
+
+    <script>
+        let nickname = prompt('닉네임을 입력해주세요');
+        let socket = io.connect();
+
+        socket.emit('info2', {nickname : nickname});
+
+
+        function send(){
+            // console.log(id);
+            let msg = document.getElementById('message').value;
+            let nick = document.getElementById('nick-list').value;
+
+            socket.emit('send', {msg : msg, to : nick});
+            document.getElementById('message').value = '';
+        }
+
+
+        socket.on('newMessage', function(data){
+            // data = {id : ~~~, msg : ~~~};
+            let chat_list = document.getElementById('chat-list');
+
+            let div = document.createElement('div');
+            let div_chat = document.createElement('div');
+            let span = document.createElement('span');
+            
+            div_chat.textContent = data.msg;
+
+            if(data.is_dm) div_chat.textContent = '(DM)' + div_chat.textContent;
+            
+
+            // data.nickname -> 메시지를 보내는 사람 | nickname -> 접속한 사람
+            // 동일하다면 내가 채팅 친다.
+            // 동일하지 않다면 타인이 채팅을 친다.
+            if(data.nickname == nickname){
+                div.classList.add('my-chat');
+            }else{
+                span.textContent = data.nickname;
+                div.appendChild(span);
+                div.classList.add('other-chat');
+            }
+
+
+            div.appendChild(div_chat);
+            chat_list.appendChild(div);
+        });
+
+
+        socket.on('welcome', function(data){
+            let chat_list = document.getElementById('chat-list');
+            let p = document.createElement('p');
+
+            p.textContent = data;
+            chat_list.appendChild(p);
+        });
+
+
+        socket.on('list', function(list){
+            // list = {id ~~ : nickname, id ~~ : nickname};
+            let nick_list = document.getElementById('nick-list');
+
+            while(nick_list.firstChild){
+                // select 안에 자식 요소를 지운다.
+                nick_list.removeChild(nick_list.lastChild);
+            }
+
+            let option = document.createElement('option');
+            option.text = '전체';
+            option.value = '전체';
+            nick_list.appendChild(option);
+
+            
+            
+            // 예시 
+            let a = {
+                key1 : '1',
+                key2 : '2',
+                key3 : '3'
+            };
+
+            // 리스트를 분해 시키면서 for문을 돈다.
+            for(let [key,value] of Object.entries(a)){
+                // key = 'key1', value = '1';
+                // key = 'key2', value = '2';
+            }
+
+            
+            for(let [key,value] of Object.entries(list)){
+                let option = document.createElement('option');
+                option.text = value;
+                option.value = value;
+                nick_list.appendChild(option);                
+            }
+        });
+
+
+    </script>
+</body>
+</html>
