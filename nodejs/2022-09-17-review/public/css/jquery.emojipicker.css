@@ -53,6 +53,9 @@
 .emojiPicker .shortcode .eod .emojiName {max-width:70%; padding:5px 0 0 0; font-size:10px; font-weight:normal;}
 
 .emojiPicker{
-    top:540px !important;
-    left:840px !important;
+    width:294px !important;
+    top:67.9%;
+
+    /* left:51.2% !important; */
+    /* left:840px !important; */
 }
