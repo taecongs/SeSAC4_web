@@ -76,6 +76,10 @@
 
                                     <li class="last_li">
                                         <a class="disableLink" href="#">대화상대</a>
+                                        <div class="add_user">
+                                            <img class="add_img" src="../image/add2.png">
+                                            <p class="add_name">대화상대 초대</p>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -169,10 +173,14 @@
             img.width = 40;
 
             let date = new Date();
-            let month = date.getMonth() + 1;
-            let day = date.getDate();
+            // let month = date.getMonth() + 1;
+            // let day = date.getDate();
             let hours = date.getHours();
             let minutes = date.getMinutes();
+
+            let ampm = hours >= 12 ? '오후' : '오전';
+            hours = hours % 12;
+            hours = hours ? hours : 12;
 
             div_chat.textContent = data.msg;
 
@@ -189,7 +197,8 @@
                 /* time */
                 div.appendChild(span);
                 span.className = 'date_txt_1';
-                span.innerHTML = `${hours < 13 ? `오전 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours - 12)}`:`오후 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours -12)}`}:${minutes < 10 ? `0{minutes}`:minutes}`;
+                span.innerHTML = `${ampm} ${hours}:${minutes < 10 ? `0${minutes}`:minutes}`;
+                // span.innerHTML = `${hours < 13 ? `오전 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours - 12)}`:`오후 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours -12)}`}:${minutes < 10 ? `0{minutes}`:minutes}`;
                 // span.innerHTML = `${hours}:${minutes < 10 ? `0{minutes}`:minutes}`;
 
 
@@ -202,7 +211,7 @@
 
                 div.appendChild(span_date);
                 span_date.className = 'date_txt_2';
-                span_date.innerHTML = `${hours < 13 ? `오전 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours - 12)}`:`오후 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours -12)}`}:${minutes < 10 ? `0{minutes}`:minutes}`;
+                span_date.innerHTML = `${ampm} ${hours}:${minutes < 10 ? `0${minutes}`:minutes}`;
                 // span_date.innerHTML = `${hours}:${minutes}`;
             }
 
