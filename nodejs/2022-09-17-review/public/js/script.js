@@ -43,6 +43,8 @@
         .prepend(
           "<span class='nav-search-close-button' tabindex='0'>&#10005;</span>"
         ),
+
+
       (r.init = function() {
         (r.settings = n.extend({}, o, s)),
           r.settings.offCanvasCloseButton &&
@@ -67,7 +69,8 @@
             }),
           n(t)
             .on("click touchstart", function() {
-              r.hideOffcanvas(), s !== a && r.callback("onHideOffCanvas");
+              // nav-menus-wrapper 클릭 시 햄버거 메뉴 없어 지는 것 때문에 주석 처리 해놈
+              // r.hideOffcanvas(), s !== a && r.callback("onHideOffCanvas");
             }),
           n(t)
             .find(".nav-search-button, .nav-search-close-button")
@@ -88,6 +91,8 @@
           r.settings.hiddenOnMobile && m(),
           s !== a && r.callback("onInit");
       });
+
+
     var h = function() {
         n(t)
           .find(".nav-submenu")
@@ -96,6 +101,8 @@
             .find("li")
             .removeClass("focus");
       },
+
+
       v = function() {
         n(t)
           .find("li")
@@ -112,11 +119,15 @@
                   ));
           });
       },
+
+
       m = function() {
         n(t).hasClass("navigation-portrait")
           ? n(t).addClass("navigation-hidden")
           : n(t).removeClass("navigation-hidden");
       };
+
+
     (r.showSubmenu = function(i, e) {
       C() > r.settings.mobileBreakpoint &&
         n(t)
@@ -140,6 +151,8 @@
               .addClass(r.settings.animationOnShow),
         n(i).addClass("focus");
     }),
+
+
       (r.hideSubmenu = function(i, e) {
         "fade" == e
           ? n(i)
@@ -161,6 +174,8 @@
             .find(".focus")
             .removeClass("focus");
       });
+
+
     var p = function() {
         n("body").addClass("no-scroll"),
           r.settings.overlay &&
@@ -173,6 +188,8 @@
                 r.hideOffcanvas();
               }));
       },
+
+
       g = function() {
         n("body").removeClass("no-scroll"),
           r.settings.overlay &&
@@ -182,6 +199,8 @@
                 n(this).remove();
               });
       };
+
+
     (r.showOffcanvas = function() {
       p(),
         "left" == r.settings.offCanvasSide
@@ -194,6 +213,8 @@
               .css("transition-property", "right")
               .addClass("nav-menus-wrapper-open");
     }),
+
+
       (r.hideOffcanvas = function() {
         n(t)
           .find(".nav-menus-wrapper")
@@ -209,6 +230,8 @@
           ),
           g();
       }),
+
+
       (r.toggleOffcanvas = function() {
         C() <= r.settings.mobileBreakpoint &&
           (n(t)
@@ -217,6 +240,8 @@
             ? (r.hideOffcanvas(), s !== a && r.callback("onHideOffCanvas"))
             : (r.showOffcanvas(), s !== a && r.callback("onShowOffCanvas")));
       }),
+
+
       (r.toggleSearch = function() {
         "none" ==
         n(t)
@@ -240,6 +265,8 @@
               .find("input")
               .blur());
       }),
+
+
       (r.initNavigationMode = function(i) {
         r.settings.responsive
           ? (i <= r.settings.mobileBreakpoint &&
@@ -264,6 +291,8 @@
             k(),
             s !== a && r.callback("onLandscape"));
       });
+
+
     var b = function() {
         n("html").on("click.body touchstart.body", function(i) {
           0 === n(i.target).closest(".navigation").length &&
@@ -279,11 +308,15 @@
               .fadeOut());
         });
       },
+
+
       C = function() {
         return (
           i.innerWidth || e.documentElement.clientWidth || e.body.clientWidth
         );
       },
+
+
       w = function() {
         n(t)
           .find(".nav-menu")
@@ -292,6 +325,8 @@
           .off(f)
           .off(c);
       },
+
+
       O = function() {
         if (C() > r.settings.mobileBreakpoint) {
           var i = n(t).outerWidth(!0);
@@ -310,6 +345,8 @@
             });
         }
       },
+
+
       y = function() {
         function i(i) {
           var e = n(i)
@@ -333,6 +370,8 @@
           for (var e = n(t).find(".megamenu-tabs"), a = 0; a < e.length; a++)
             i(e[a]);
       },
+
+      
       k = function() {
         w(),
           h(),
@@ -399,6 +438,8 @@
                 }),
           r.settings.hideSubWhenGoOut && b();
       },
+
+
       S = function() {
         w(),
           h(),
@@ -531,9 +572,13 @@
                       }
                     }));
       };
+
+
     (r.callback = function(n) {
       s[n] !== a && s[n].call(t);
     }),
+
+    
       r.init();
   }),
     (n.fn.navigation = function(i) {

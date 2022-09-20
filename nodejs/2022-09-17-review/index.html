@@ -44,32 +44,38 @@
                             <!-- Main Menus Wrapper -->
                             <div class="nav-menus-wrapper">
                                 <ul class="nav-menu align-to-right">
-                                    <li>
-                                        <a href="#">사진, 동영상</a>
+                                    <li class="r_li">
+                                        <a class="disableLink" href="#">사진, 동영상</a>
+                                        <img class="right_img" src="../image/right-a.png ">
                                     </li>
 
-                                    <li>
-                                        <a href="#">파일</a>
+                                    <li class="r_li">
+                                        <a class="disableLink" href="#">파일</a>
+                                        <img class="right_img" src="../image/right-a.png ">
                                     </li>
 
-                                    <li>
-                                        <a href="#">링크</a>
+                                    <li class="r_li">
+                                        <a class="disableLink" href="#">링크</a>
+                                        <img class="right_img" src="../image/right-a.png ">
                                     </li>
 
-                                    <li>
-                                        <a href="#">톡캘린더</a>
+                                    <li class="r_li">
+                                        <a class="disableLink" href="#">톡캘린더</a>
+                                        <img class="right_img" src="../image/right-a.png ">
                                     </li>
 
-                                    <li>
-                                        <a href="#">뮤직</a>
+                                    <li class="r_li">
+                                        <a class="disableLink" href="#">뮤직</a>
+                                        <img class="right_img" src="../image/right-a.png ">
                                     </li>
 
-                                    <li>
-                                        <a href="#">톡게시판</a>
+                                    <li class="r_li">
+                                        <a class="disableLink" href="#">톡게시판</a>
+                                        <img class="right_img" src="../image/right-a.png ">
                                     </li>
 
                                     <li class="last_li">
-                                        <a href="#">대화상대</a>
+                                        <a class="disableLink" href="#">대화상대</a>
                                     </li>
                                 </ul>
                             </div>
@@ -183,7 +189,8 @@
                 /* time */
                 div.appendChild(span);
                 span.className = 'date_txt_1';
-                span.innerHTML = `${hours}:${minutes}`;
+                span.innerHTML = `${hours < 13 ? `오전 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours - 12)}`:`오후 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours -12)}`}:${minutes < 10 ? `0{minutes}`:minutes}`;
+                // span.innerHTML = `${hours}:${minutes < 10 ? `0{minutes}`:minutes}`;
 
 
             } else {
@@ -195,7 +202,8 @@
 
                 div.appendChild(span_date);
                 span_date.className = 'date_txt_2';
-                span_date.innerHTML = `${hours}:${minutes}`;
+                span_date.innerHTML = `${hours < 13 ? `오전 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours - 12)}`:`오후 ${(hours - 12) < 10 ? `0${(hours - 12)}`:(hours -12)}`}:${minutes < 10 ? `0{minutes}`:minutes}`;
+                // span_date.innerHTML = `${hours}:${minutes}`;
             }
 
             div.appendChild(div_chat);
@@ -220,8 +228,15 @@
         });
 
 
-        socket.on('userList', function (list) {
-            alert(list);
+        function setSelect(name){
+            let nick_list = document.getElementById('nick-list');
+            let option = document.createElement('option');
+            option.text = name;
+            option.value = name;
+            nick_list.appendChild(option);
+        }
+
+        function setRight(name){
             let user_li = document.querySelector('.last_li');
             let div_li = document.createElement('div');
 
@@ -231,16 +246,16 @@
             let p2 = document.createElement('p');
             let img2 = document.createElement('img');
 
+
             img2.src = './image/profile.gif';
             img2.width = 40;
             img2.className = 'user_img';
 
             p2.className = 'user_p';
-            p2.textContent = list;
+            p2.textContent = name;
             div_li.appendChild(p2);
             div_li.appendChild(img2);
-
-        });
+        }
 
 
 
@@ -259,13 +274,18 @@
             nick_list.appendChild(option);
 
 
+            let user_list = document.querySelectorAll('.user_list');
+
+            for(let i = 0; i < user_list.length; i++){
+                user_list[i].remove();
+            }
+
+            setRight(nickname);
+
             for (let [key, value] of Object.entries(list)) {
-                // key = 'key1', value = '1';
-                // key = 'key2', value = '2';
-                let option = document.createElement('option');
-                option.text = value;
-                option.value = value;
-                nick_list.appendChild(option);
+                if(value == nickname) continue;
+                setRight(value);
+                setSelect(value);
             }
         });
 
@@ -279,6 +299,10 @@
                 document.getElementById("btnJoin").click();
             }
         });
+
+
+        // a링크 비활성화
+        document.querySelector(".disableLink").removeAttribute('href');
     </script>
 
     <!-- hamburger -->
