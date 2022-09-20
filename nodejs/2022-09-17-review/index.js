@@ -31,6 +31,8 @@ io.on('connection', function(socket){
 
         // 서버에 접속되어 있는 모든 클라이언트에게 Select 목록 전송
         io.emit('list', list);
+
+        io.emit('userList', list[socket.id]);
     });
 
 

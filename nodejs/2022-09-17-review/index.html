@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.4/socket.io.js"></script>
     <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
     <!-- Emoji Data -->
+    <script src="../js/jquery.emojipicker.js"></script>
+    <script src="../js/jquery.emojis.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/jquery.emojipicker.css">
     <link rel="stylesheet" type="text/css" href="../css/jquery.emojipicker.tw.css">
-    <script type="text/javascript" src="../js/jquery.emojipicker.js"></script>
-    <script type="text/javascript" src="../js/jquery.emojis.js"></script>
 
     <link rel="stylesheet" href="../css/index.css" />
     <title>채팅 프로그램</title>
@@ -33,6 +33,50 @@
 
 
         <main class="msg-chat">
+            <div class="header_area">
+                <div class="main_header_area animated">
+                    <div class="container-2">
+                        <nav id="navigation1" class="navigation">
+                            <div class="nav-header">
+                                <div class="nav-toggle"></div>
+                            </div>
+
+                            <!-- Main Menus Wrapper -->
+                            <div class="nav-menus-wrapper">
+                                <ul class="nav-menu align-to-right">
+                                    <li>
+                                        <a href="#">사진, 동영상</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">파일</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">링크</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">톡캘린더</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">뮤직</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="#">톡게시판</a>
+                                    </li>
+
+                                    <li class="last_li">
+                                        <a href="#">대화상대</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
             <div id="chat-list" class="chat-list"></div>
 
             <div id="input-container">
@@ -157,6 +201,7 @@
             div.appendChild(div_chat);
             chat_list.appendChild(div);
 
+
             chat_list.scrollTop = chat_list.scrollHeight;
         });
 
@@ -172,6 +217,29 @@
             p.textContent = data;
             chat_list.appendChild(div);
             div.appendChild(p);
+        });
+
+
+        socket.on('userList', function (list) {
+            alert(list);
+            let user_li = document.querySelector('.last_li');
+            let div_li = document.createElement('div');
+
+            user_li.appendChild(div_li);
+            div_li.className = 'user_list';
+
+            let p2 = document.createElement('p');
+            let img2 = document.createElement('img');
+
+            img2.src = './image/profile.gif';
+            img2.width = 40;
+            img2.className = 'user_img';
+
+            p2.className = 'user_p';
+            p2.textContent = list;
+            div_li.appendChild(p2);
+            div_li.appendChild(img2);
+
         });
 
 
@@ -191,22 +259,9 @@
             nick_list.appendChild(option);
 
 
-
-            // 예시 
-            let a = {
-                key1: '1',
-                key2: '2',
-                key3: '3'
-            };
-
-            // 리스트를 분해 시키면서 for문을 돈다.
-            for (let [key, value] of Object.entries(a)) {
+            for (let [key, value] of Object.entries(list)) {
                 // key = 'key1', value = '1';
                 // key = 'key2', value = '2';
-            }
-
-
-            for (let [key, value] of Object.entries(list)) {
                 let option = document.createElement('option');
                 option.text = value;
                 option.value = value;
@@ -225,6 +280,10 @@
             }
         });
     </script>
+
+    <!-- hamburger -->
+    <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script> -->
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

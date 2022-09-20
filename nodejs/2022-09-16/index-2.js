@@ -27,7 +27,7 @@ io.on('connection', function(socket){
         console.log('입력한 아이디 : ', list[socket.id]);
 
         //서버에 접속되어 있는 모든 클라이언트에게 메시지 전송
-        io.emit('welcome', data.nickname + '님이 입장하셨습니다.');
+        io.emit('welcome', list[socket.id] + '님이 입장하셨습니다.');
 
         // 서버에 접속되어 있는 모든 클라이언트에게 Select 목록 전송
         io.emit('list', list);
