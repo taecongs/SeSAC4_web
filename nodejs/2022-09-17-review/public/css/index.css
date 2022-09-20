@@ -28,6 +28,7 @@
         flex-flow: column wrap;
         justify-content: space-between;
         width: 100%;
+        /* height:100%; */
         /* max-width: 800px; */
         max-width: 600px;
         margin: 25px 10px;
@@ -62,14 +63,11 @@
 
     }
 
-    .nav-toggle {
-        display: block;
-    }
 
     .nav-toggle {
         width: 30px;
         height: 30px;
-        padding: 25px 0;
+        padding: 20px 0;
         position: absolute;
         top: 30%;
         /* margin-top:-14px; */
@@ -92,7 +90,7 @@
         width: 320px;
         height: 1199px;
 
-        height: 787px;
+        height: 767px;
         /* top: 0; */
         /*left:-400px;*/
         right: -400px;
@@ -192,7 +190,7 @@
         /* width: 100%;
         height: 100%; */
         width: 100%;
-        height: 787px;        
+        height: 767px;        
         /* top: 0;
         left: 0; */
         position: absolute;
@@ -259,8 +257,8 @@
         /* height: 1100px;
         max-height: 1100px; */
 
-        height: 700px;
-        max-height: 700px;
+        height: 680px;
+        max-height: 680px;
         overflow-x: hidden;
         overflow-y: auto;
         transition: max-height 0.4s ease-in-out !important;
@@ -517,6 +515,129 @@
         right: 16px;
         margin-top: -10px;
         cursor: pointer;
+    }
 
 
+
+    @media (max-width: 1024px){
+        body{
+            height:auto;
+        }
+
+        .container{
+            height:100%;
+            width:500px;
+        }
+                
+        
+        .chat-list{
+            height:620px;
+            max-height: 620px;
+        }
+
+        select{
+            font-size:14px;
+            background-size:13px 5px;
+        }
+
+
+        input#message{
+            font-size:14px;
+        }    
+        
+        #btnJoin{
+            font-size:14px;
+        }        
+
+        .nav-toggle:before{
+            height:2px;
+        }
+
+        .nav-menus-wrapper{
+            width:250px;
+            height:701px;
+        }
+
+        .nav-overlay-panel{
+            height:701px;
+        }        
+    }
+
+
+
+
+
+    @media (max-width: 500px){
+        body{
+            height:auto;
+        }
+
+        .container{
+            height:100%;
+        }
+
+        .nav-toggle{
+            padding:10px 0;
+            top:10px;
+        }
+
+        .chat-list{
+            max-height:600px;
+            height:600px;
+        }
+
+        p{
+            margin:0 0 20px 0;
+            font-size:10px;
+        }
+
+        /* 셀렉터 */
+        .box1{
+            width:25%;
+            padding:10px 10px;
+        }
+
+        select{
+            font-size:12px;
+            background-size:13px 5px;
+        }
+
+        /* 텍스트 입력 */
+        .box2{
+            padding:10px 10px;
+        }
+
+        input#message{
+            font-size:12px;
+        }
+
+        /* 전송 */
+        #btnJoin{
+            font-size:12px;
+        }
+
+        .nav-menus-wrapper{
+            width:250px;
+            height:727px;
+        }
+
+        .nav-overlay-panel{
+            height:727px;
+        }
+
+        .nav-menu>li>a{
+            font-size:12px;
+        }
+
+        li.last_li a{
+            padding-bottom:5px;
+        }
+    }
+
+
+    @media (max-width: 425px){
+        .chat-list{
+            max-height:470px;
+            height:470px;
+        }
     }
