@@ -25,9 +25,15 @@ class ClassComponent extends Component{
         return(
             <div>
                 <h1>나의 새롭고 멋진 컴포넌트2</h1>
+                <h5>나의 이름은 {this.props.name}이다!</h5>
+                <h5>작성한 Children : {this.props.children}</h5>
             </div>
         );
-    }
+    } 
+}
+
+ClassComponent.defaultProps = {
+    name : '기본값'
 }
 
 export default ClassComponent;

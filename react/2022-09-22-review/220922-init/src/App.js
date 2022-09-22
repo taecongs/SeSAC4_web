@@ -1,4 +1,4 @@
-// App.css를 불러온다.
+// App.css를 연결한다.
 import './App.css';
 
 // ClassCompoent 컴포넌트를 불러온다.
@@ -62,10 +62,8 @@ function App() {
   // 생성한 컴포넌트를 App.js 컴포넌트에서 호출해보기
   return(
     <div>
-      <ClassComponent />
-      <ClassComponent />
-      <ClassComponent />
-      <ClassComponent />
+      <ClassComponent name='Bang' />
+      <ClassComponent>Children으로 추가한 텍스트</ClassComponent>
     </div>
   )
 
