@@ -65,7 +65,7 @@ function App() {
       <ClassComponent name='Bang' />
       <ClassComponent>Children으로 추가한 텍스트</ClassComponent>
     </div>
-  )
+  );
 
 }
 

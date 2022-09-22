@@ -1,0 +1,39 @@
+/* 클래스 컴포넌트를 이용한 실습(1) */
+.food_txt{
+    color:red;
+}
+
+
+
+/* 함수 컴포넌트를 이용한 실습(2) */
+.two_box{
+    background:#f5f5dc;
+    width:30%;
+    padding:2%;
+    margin:0 auto;
+    text-align: center;
+}
+
+.two_box h1{
+    color:orange;
+    margin:0;
+    text-align: center;
+}
+
+.book_img{
+    width:50%;
+    margin-top:15px;
+}
+
+.two_box h3{
+    margin-top:15px;
+}
+
+.detail{
+    width:50%;
+    margin:0 auto;
+}
+
+.detail h3{
+    text-align: left;
+}
