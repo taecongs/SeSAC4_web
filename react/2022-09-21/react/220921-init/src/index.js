@@ -47,7 +47,7 @@ root.render(
     {/* <ClassComponent name = {1} location='문래' /> */}
     {/* <ClassComponent name = {1} location='문래'>문자</ClassComponent> */}
 
-    {/* <App /> */}
+    <App />
   </>
 );
 

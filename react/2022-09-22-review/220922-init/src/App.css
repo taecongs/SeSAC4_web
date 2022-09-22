@@ -1,0 +1,96 @@
+.App_1{
+  width:100%;
+}
+
+.first_box{
+  background: yellowgreen;
+  padding:10px;
+  margin-bottom:2%;
+}
+
+
+.second_box{
+  background:lavenderblush;
+  padding:10px;
+  margin-bottom:2%;
+}
+
+h2, h3{
+  margin:0;
+}
+
+.thrid_box, .four_box{
+  padding:10px;
+  margin-bottom:2%;  
+}
+
+
+.five_box{
+  padding:10px;
+  margin-bottom:2%;  
+  background:#faebd7;
+  width:30%;
+  margin:2% auto;
+}
+
+.five_box2{
+  width:30%;
+  margin:2% auto;  
+  text-align: center;
+}
+
+.five_box h1{
+  color:orange;
+  text-align: center;
+}
+
+
+.six_box{
+  width:30%;
+  border:1px solid #ddd;
+  display:flex;
+  text-align: center;
+  margin:2% auto;
+}
+
+.red{
+  background:red;
+  width:100px;
+  height:100px;
+}
+
+.orange{
+  background:orange;
+  width:100px;
+  height:150px;
+}
+
+.yellow{
+  background:yellow;
+  width:100px;
+  height:200px;
+}
+
+.green{
+  background:green;
+  width:100px;
+  height:250px;
+}
+
+.blue{
+  background:blue;
+  width:100px;
+  height:300px;
+}
+
+.navy{
+  background:navy;
+  width:100px;
+  height:350px;
+}
+
+.purple{
+  background:purple;
+  width:100px;
+  height:400px;
+}
