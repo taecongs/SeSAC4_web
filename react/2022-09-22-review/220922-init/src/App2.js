@@ -3,7 +3,7 @@ import Test4 from './Test4';
 
 	
 const App2 = () => {
-    const valid = function viewConsoleLog(){
+    const valid = function(){
         alert('콘솔 띄우기 성공!');
         console.log('콘솔 띄우기 성공!');
     }
