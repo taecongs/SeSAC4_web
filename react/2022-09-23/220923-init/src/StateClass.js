@@ -23,6 +23,10 @@ class StateClass extends Component{
     }
 
 
+    changeText = () => {
+        this.setState({modifyTxt: this.state.modifyTxt=='Hello World!' ? 'Goodbye World!' : 'Hello World!'})
+    }
+
 
 
 
