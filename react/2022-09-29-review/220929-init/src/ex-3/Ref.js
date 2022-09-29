@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, createRef} from 'react';
 
 
 class Ref extends Component{
@@ -12,6 +12,14 @@ class Ref extends Component{
     clickBtn2 = () => {
         console.log(this.input.value);
         this.input.value = '';
+    }
+    
+
+    inputText = createRef();
+
+    clickBtn3 = () => {
+        console.log(this.inputText.current.value);
+        this.inputText.current.value = '';
     }
 
     render(){
@@ -27,6 +35,11 @@ class Ref extends Component{
                 <div>
                     <input type='text' placeholder='기본값2' ref={(ref) => {this.input = ref} } />
                     <button onClick={this.clickBtn2}>클릭2</button>
+                </div>
+                
+                <div>
+                    <input type='text' placeholder='기본값3' ref={this.inputText} />
+                    <button type='button' onClick={this.clickBtn3}>클릭3</button>
                 </div>
             </div>
         );
