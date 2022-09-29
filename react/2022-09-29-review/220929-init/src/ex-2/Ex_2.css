@@ -1,0 +1,64 @@
+.container{
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+}
+
+
+
+.first_box{
+    width:50%;
+    border:1px solid #333;
+    padding:2% 1%;
+    box-sizing: border-box;
+    text-align: center;
+    margin:2% auto;
+}
+
+.input_1, .input_2{
+    margin-right:10px;
+}
+
+.input_3{
+    margin-left:10px;
+    margin-right:10px;
+}
+
+
+
+
+.second_box{
+    width:50%;
+    padding:0 1%;
+    text-align: center;
+    margin:2% auto;    
+}
+
+
+
+
+.third_box{
+    width:50%;    
+    box-sizing: border-box;
+    margin:0 auto;
+    text-align: center;
+}
+
+.table_row, .table_row2{
+    width:100%;
+    border:1px solid #333;
+    text-align: center;
+    border-spacing:0;
+}
+
+
+
+.table_row thead th, .table_row2 thead th{
+    border:1px solid #333;
+    padding:10px;
+}
+
+.table_row tbody td, .table_row2 tbody td{
+    border:1px solid #333;
+    padding:10px;
+}
