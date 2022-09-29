@@ -38,6 +38,7 @@ const Sample3 = () => {
 
     // onRemove : filter 함수를 사용하여 해당 id를 없앤다.
     const onRemove = id => {
+        //name.id 가 id 인 것을 제거 한다.
         const nextNames = names.filter(name => name.id !== id);
 
         // setNames를 통해 상태를 업데이트 한다.
