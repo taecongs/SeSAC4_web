@@ -1,0 +1,14 @@
+// 재사용하는 코드들은 따로 정의하여 관리하면 편하다.
+$red : red;
+$orange : orange;
+$yellow : yellow;
+$green : green;
+$blue : blue;
+$navy : navy;
+$purple : purple;
+
+
+@mixin boxSize($size){
+    width:100px;
+    height:20px * $size;
+}

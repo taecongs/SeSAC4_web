@@ -1,0 +1,101 @@
+@mixin mycircle(){
+    @keyframes mycircle {
+        0% {
+            left:0px;
+            top:10px;
+        }
+    
+        25% {
+            top:10px;
+            left: 460px;
+        }
+    
+        50% {
+            top:340px;
+            left:460px;
+        }
+    
+        75% {
+            top:340px;
+            left:0px;
+        }
+    
+        100% {
+            top:10px;
+            left:0px;
+        }
+    }
+}
+
+@mixin mycircle2(){
+    @keyframes mycircle2 {
+        0% {
+            left:100px;
+            top:70px;
+        }
+    
+        25% {
+            top:70px;
+            left:360px;
+        }
+    
+        50% {
+            top:340px;
+            left:360px;
+        }
+    
+        75% {
+            top:340px;
+            left:100px;
+        }
+    
+        100% {
+            top:70px;
+            left:100px;
+        }
+    }
+}
+
+
+@mixin mycircle3(){
+    @keyframes mycircle3 {
+        0% {
+            left:50px;
+            top:130px;
+        }
+    
+        25% {
+            top:130px;
+            left:160px;
+        }
+    
+        50% {
+            top:340px;
+            left:160px;
+        }
+    
+        75% {
+            top:340px;
+            left:50px;
+        }
+    
+        100% {
+            top:130px;
+            left:50px;
+        }
+    }
+}
+
+
+
+// @mixin animation($delay, $duration, $name){
+//     animation-delay : $dalay;
+//     animation-duration: $duration;
+//     animation-name : $name;
+// }
+
+// @mixin keyframe ($name){
+//     @keyframes #{$name}{
+//         @content;
+//     }
+// }

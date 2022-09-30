@@ -1,0 +1,39 @@
+@import '../3_practice/Practice_2_1.scss';
+
+.container{
+    width:50%;
+    height:400px;
+    margin: 0 auto;
+    border:1px solid #ddd;
+    position:relative;
+
+    .circle{
+        width: 50px;
+        height: 50px;
+        background: yellowgreen;
+        position:absolute;
+        top:10px;
+        border-radius: 50%;
+        animation-name: mycircle;
+        animation-duration:3s; 
+        animation-delay:1s;
+        animation-iteration-count: 50;    
+
+        @include mycircle();
+        
+        &.blue{
+            top:70px;
+            background:blue;
+            animation-name:mycircle2;
+            @include mycircle2();
+        }
+
+        &.navy{
+            top:130px;
+            background:navy;
+            animation-name:mycircle3;
+            @include mycircle3();
+        }
+    }
+
+}

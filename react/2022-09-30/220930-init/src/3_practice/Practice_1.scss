@@ -1,0 +1,72 @@
+.con1{
+    width:50%;
+    margin:0 auto;
+
+    .first_circle{
+        background: #33c7f7;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        position:relative;
+
+        .first_1{
+            background: #fff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;            
+        }
+
+        .first_2 {
+            background: #000;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+        }
+
+        .second_1 {
+            background: #2c439b;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            top: 60px;
+            left: 70px;
+        }
+
+        .second_2 {
+            background: #253f58;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            top: 40px;
+            left: 80px;
+        }
+
+        .second_3 {
+            background: #8ad5eb;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 80px;
+        }
+
+        .second_4 {
+            background: #8a54a2;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 80px;
+        }
+    }
+
+}
