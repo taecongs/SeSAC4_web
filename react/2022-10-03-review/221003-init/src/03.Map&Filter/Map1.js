@@ -11,9 +11,9 @@ const Map1 = () => {
         <div>
             <h1>Map 복습</h1>
 
-            <ul>
+            <ol>
                 {bsTeam}
-            </ul>
+            </ol>
         </div>
     );
 }
