@@ -37,8 +37,6 @@ const HookEffect = () => {
                 <input type='text' value={name} onChange={changeName} />
                 <button type='button' onClick={clickBtn}>클릭</button>
             </div>
-
-
         </div>
     );
 }

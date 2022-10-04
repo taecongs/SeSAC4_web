@@ -1,0 +1,42 @@
+@import '../02.Sass/Utill.scss';
+
+.multi_box{
+    width:345px;
+    height:500px;
+    border:1px solid #000;
+    box-sizing: border-box;
+    padding:5px;
+
+    // .multi_box .ball
+    .ball{
+        width:30px;
+        height:30px;
+        border-radius: 50%;
+        position:relative;
+        margin-top:5px;
+        font-size:10px;
+        color:#fff;
+        line-height: 28px;
+        text-align: center;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+
+        // .ball.kaitoke
+        &.kaitoke{
+            background:#003e19;
+            @include animation(1, ani1);
+        }
+
+        // .ball.observatory
+        &.observatory{
+            background:#028c6a;
+            @include animation(2, ani2);
+        }
+
+        // .ball.larchmere
+        &.larchmere{
+            background:#7bc5ae;
+            @include animation(3, ani3);
+        }
+    }
+}
