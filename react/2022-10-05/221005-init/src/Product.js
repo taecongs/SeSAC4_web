@@ -37,6 +37,7 @@ const Product = () => {
             <ul>
                 <li>keyWords : {searchParams}</li>
                 {/* get()메서드를 이용해 searchParams안에 있는 데이터를 가져올 수 있다. */}
+                {/* <Link to='product/1?search=productName&q=demo#test'>a번 상품</Link>  */}
                 <li>keyWord : {searchParams.get('search')}</li>
             </ul>
 
