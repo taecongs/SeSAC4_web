@@ -1,0 +1,20 @@
+<head>
+    <script>
+        function checkID( obj ){
+            if ( obj.value == "id2" ) {
+                $("#login_text").css("color", "green");
+                $("#login_text").text("사용할 수 있는 아이디입니다.");
+                $( "button" ).removeAttr("disabled")
+            } else {
+                $("#login_text").css("color", "red");
+                $("#login_text").text("사용할 수 없는 아이디입니다.");
+                $( "button" ).attr("disabled", "true");
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" placeholder="아이디" onkeyup="checkID( this );"> <br>
+    <p id="login_text"></p>
+    <button type="button" disabled>로그인</button>
+</body>
