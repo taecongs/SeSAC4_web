@@ -1,0 +1,224 @@
+<html lang="ko" style="--vh:12.97px;"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.seoulmusicfestival.co.kr/">
+    <meta property="og:title" content="seoulmusicfestival">
+    <meta property="og:image" content="/img/smuf_og.jpg">
+    <meta property="og:description" content="아름다운 감성으로 서울 일대를 가득 채울
+    뮤직 페스티벌이 개최됩니다.">
+    <meta name="description" content="아름다운 감성으로 서울 일대를 가득 채울
+    뮤직 페스티벌이 개최됩니다.">
+    <meta property="og:site_name" content="seoulmusicfestival">
+    <title>2022 SEOUL MUSIC FESTIVAL</title>
+    <!-- FONT -->
+    <link rel="stylesheet" href="/font/font.css">
+
+     
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="./utils/css/reset.css">
+    <link rel="stylesheet" href="./utils/css/scroll.css">
+    <!-- <link rel="stylesheet" href="./css/l.css"> -->
+    <link rel="stylesheet" href="./css/m.css">
+    <!-- <link rel="stylesheet" href="./css/sb.css"> -->
+
+    <!-- lib -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+
+    <!-- plugin -->
+    <!-- <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> -->
+
+    <!-- SCRIPT -->
+    <!-- <script src="/utils/plugin\jquery.js"></script>	 -->
+</head>
+<body data-aos-easing="ease" data-aos-duration="600" data-aos-delay="0">
+<!-- <script src="./js/hea.js"></script>
+<script>hE.init();</script> -->
+<main class="__main">
+
+    <section class="s01">
+
+        <div class="p">
+            <div class="pp p_01">
+                <img src="./img/s1_back01.png" alt="">
+            </div>
+            <div class="pp p_02">
+                <img src="./img/s1_back02.png" alt="">
+            </div>
+        </div>
+
+        <div class="firework">
+            <div class="f_01 ff" style="transform: translate3d(0px, 0px, 0px) scale(0.9184, 0.918403);">
+                <img src="./img/firework01.png" alt="">
+            </div>
+            <div class="f_02 ff" style="transform: translate3d(0px, 0px, 0px) scale(0.9184, 0.918403);">
+                <img src="./img/firework02.png" alt="">
+            </div>
+            <div class="f_03 ff" style="transform: translate3d(0px, 0px, 0px) scale(0.9184, 0.918403);">
+                <img src="./img/firework03.png" alt="">
+            </div>
+            <div class="f_04 ff" style="transform: translate3d(0px, 0px, 0px) scale(0.9184, 0.918403);">
+                <img src="./img/firework04.png" alt="">
+            </div>
+        </div>
+
+        <div class="b">
+            <div class="b_01 bb" style="transform: translate(0px, 0px); transform-origin: 50% 100%;"></div>
+            <div class="b_02 bb" style="transform: translate(0px, 0px); transform-origin: 50% 100%;"></div>
+            <div class="b_03 bb" style="transform: translate(0px, 0px); transform-origin: 50% 100%;"></div>
+        </div>
+
+        <div class="tbx">
+            <div class="im" style="opacity: 1; transform: translate(0px, 0px);">
+                <img src="./img/s1_m1.png" alt="">
+            </div>
+            <p style="opacity: 1; transform: translate(0px, 0px);">2022.10.13(목)~16(일) / 4일간</p>
+            <h2 style="opacity: 1; transform: translate(0px, 0px);">노들섬</h2>
+        </div>
+
+    </section>
+
+    <section class="s02">
+        
+        <div class="w">
+            <div class="wave" style="background-image: url(./img/w_wave.png);"></div>
+        </div>
+    </section>    
+
+</main>
+
+
+
+<!-- <script>
+    
+    $('#topBtn').click(function(){
+        $('html').animate({'scrollTop':"0"},300);
+    });
+
+    function topBtnPlus(){
+        let yOffset = $(window).scrollTop() + $(window).height();
+        let footer, footerWaveHeight;
+
+        if(window.location.pathname.split('/')[2] == "about"){
+            footer = $('footer').offset().top;
+            footerWaveHeight = $('footer').height();
+        }else{
+            footer = $('footer .w').offset().top;
+            footerWaveHeight = $('footer .w').height();
+        }
+
+        if($(window).scrollTop() > 0){
+            $('#topBtn').css({
+                'opacity':1,
+                'visibility':'visible'
+            })
+        }else{
+            $('#topBtn').css({
+                'opacity':0,
+                'visibility':'hidden'
+            })
+        }
+
+        if(window.location.pathname.split('/')[2] == "about"){
+            if(yOffset >= footer){
+                $('#topBtn').css({
+                    'transform': `translateY(-100%)`,
+                    'bottom':'100%',
+                    'position':'absolute'
+                });
+            }else{
+                $('#topBtn').css({
+                    'transform': `none`,
+                    'bottom':'5%',
+                    'position':'fixed'
+                });
+            }
+        }else{
+            if(yOffset >= footer){
+                $('#topBtn').css({
+                    'transform': `translateY(calc(-${footerWaveHeight}px - 30%))`,
+                    'bottom':'100%',
+                    'position':'absolute'
+                });
+            }else{
+                $('#topBtn').css({
+                    'transform': `none`,
+                    'bottom':'5%',
+                    'position':'fixed'
+                });
+            }
+        }
+    }
+
+    $(window).load(function(){
+        topBtnPlus();
+    });
+    window.addEventListener('scroll',topBtnPlus);
+    window.addEventListener('resize',topBtnPlus);
+
+</script>
+<div class="ont_plus">
+
+    <a href="https://booking.naver.com/booking/5/bizes/765254" target="_blank">
+        <div class="onTicket">
+            <div class="back"></div>
+            <div class="circle">
+                <dl>
+                    <dt>
+                        <img src="/img/icon/ticket_icon.png" alt="">
+                    </dt>
+                    <dd>
+                        일반좌석<br>예약하기
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </a>
+
+    <a href="https://yeyak.seoul.go.kr/web/reservation/selectReservView.do?rsv_svc_id=S220926153248949934" target="_blank">
+        <div class="onTicket">
+            <div class="back"></div>
+            <div class="circle">
+                <dl>
+                    <dt>
+                        <img src="/img/icon/ticket_icon.png" alt="">
+                    </dt>
+                    <dd>
+                        피크닉석<br>예약하기
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </a>
+
+</div> -->
+
+<!-- <script>
+    $(window).scroll(function(){
+        let yOffset = window.pageYOffset;
+        let calc = yOffset / ($('body').outerHeight() - $(window).outerHeight());
+        
+        $('.onTicket .back').css({
+            'transform' : `rotate(${calc*360}deg)`
+        });
+
+    });
+</script> -->
+
+
+<!-- 일러스트 애니메이션 기능 -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+<script src="./utils/plugin/gsap3/gsap.min.js"></script>
+
+
+<script src="./js/m.js"></script>
+<script>smf.init();</script>
+
+</body>
+</html>

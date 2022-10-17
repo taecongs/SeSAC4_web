@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    div {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        vertical-align: baseline;
+        -webkit-text-size-adjust: none;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    .s01 {
+        display: flex;
+        justify-content: center;
+        height: 1060px;
+        padding-top: 190px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+
+
+    .s01 .p {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        pointer-events: none;
+    }
+
+
+    .s01 .p .pp {
+        position: absolute;
+        display: inline-block;
+    }
+
+    .s01 .p .p_01 {
+        left: calc(1479/1920 * 100%);
+        right: calc(100/1920 * 100%);
+        bottom: 0;
+    }
+
+
+    .s01 .p .p_02 {
+        left: calc(123/1920 * 100%);
+        right: calc(1687/1920 * 100%);
+        bottom: 0;
+    }
+
+
+    .s01 .firework {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 6;
+        pointer-events: none;
+    }
+
+    .s01 .firework .ff {
+        position: absolute;
+        display: inline-block;
+    }
+
+    .s01 .firework .f_01 {
+        left: calc(605/1920 * 100%);
+        right: calc(1205/1920 * 100%);
+        top: calc(70/1060 * 100%);
+    }
+
+    .s01 .firework .f_02 {
+        left: calc(404/1920 * 100%);
+        right: calc(1305/1920 * 100%);
+        top: calc(285/1060 * 100%);
+    }
+
+    .s01 .firework .f_03 {
+        left: calc(1230/1920 * 100%);
+        right: calc(508/1920 * 100%);
+        top: calc(110/1060 * 100%);
+    }
+
+    .s01 .firework .f_04 {
+        left: calc(1360/1920 * 100%);
+        right: calc(440/1920 * 100%);
+        top: calc(235/1060 * 100%);
+    }
+
+
+    .s01 .b {
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        background: url(./img/s1_bg00.jpg) no-repeat center/cover !important;
+        overflow: hidden;
+    }
+
+    /* .s01 .b .bb{
+  background-repeat: no-repeat;
+  background-position: center;
+  position:absolute;
+  right:0;
+  left:0;
+  top:0;
+  bottom:0;
+}
+*/
+
+    .s01 .b .b_01 {
+        background: url(./img/s1_bg01.png);
+        z-index: 2;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .s01 .b .b_02 {
+        background: url(./img/s1_bg02.png);
+        z-index: 3;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    .s01 .b .b_03 {
+        background: url(./img/s1_bg03.png);
+        z-index: 4;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+
+    .s01 .tbx {
+        text-align: center;
+        color: #fff;
+        position: relative;
+        z-index: 8;
+        width: 90%;
+    }
+
+    .s01 .tbx .im {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .s01 .tbx .im h1 {
+        font-size: 80px;
+    }
+
+    .s01 .tbx p {
+        font-size: 24px;
+        margin-top: 25px;
+    }
+
+    .s01 .tbx h2 {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 27px;
+    }
+</style>
+
+<body>
+    <section class="s01">
+
+        <div class="p">
+            <div class="pp p_01">
+                <img src="./img/s1_back01.png" alt="">
+            </div>
+            <div class="pp p_02">
+                <img src="./img/s1_back02.png" alt="">
+            </div>
+        </div>
+
+        <div class="firework">
+            <div class="f_01 ff" style="transform: translate(0px, 0px);">
+                <img src="./img/firework01.png" alt="">
+            </div>
+            <div class="f_02 ff" style="transform: translate3d(0px, 0px, 0px) scale(0.9949, 0.994864);">
+                <img src="./img/firework02.png" alt="">
+            </div>
+            <div class="f_03 ff" style="transform: translate(0px, 0px);">
+                <img src="./img/firework03.png" alt="">
+            </div>
+            <div class="f_04 ff" style="transform: scale(0, 0);">
+                <img src="./img/firework04.png" alt="">
+            </div>
+        </div>
+
+        <div class="b">
+            <div class="b_01 bb" style="transform: translate(0px, 0px); transform-origin: 50% 100%;"></div>
+            <div class="b_02 bb" style="transform: translate(0px, 0px); transform-origin: 50% 100%;"></div>
+            <div class="b_03 bb" style="transform: translate(0px, 0px); transform-origin: 50% 100%;"></div>
+        </div>
+
+        <div class="tbx">
+            <div class="im" style="opacity: 1; transform: translate(0px, 0px);">
+                <img src="./img/s1_m1.png" alt="">
+            </div>
+            <p style="opacity: 1; transform: translate(0px, 0px);">2022.10.13(목)~16(일) / 4일간</p>
+            <h2 style="opacity: 1; transform: translate(0px, 0px);">노들섬</h2>
+        </div>
+
+    </section>
+
+    <script src="./js/hea.js"></script>
+    <script src="./js/m.js"></script>
+</body>
+
+</html>
