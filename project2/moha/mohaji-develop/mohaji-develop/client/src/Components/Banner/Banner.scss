@@ -1,0 +1,146 @@
+@import '../Commons/Commons.scss';
+@import '~include-media/dist/include-media';
+
+
+/*=========================================================
+    폰트 패밀리
+=========================================================*/
+.bannerArea{
+    width:100%;
+    text-align: center;
+    position:relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+    z-index: 10;
+
+    // Header 높이가 92px 이라 margin으로 시작 지점 정한다.
+    // 다른 페이지에서는 92px로 적용해야 할듯?
+    margin-top:92px;
+    // margin-top:30px;
+}
+
+.topVisual{
+    position:relative;
+}
+
+
+/*=========================================================
+    폰트 패밀리
+=========================================================*/
+.top_sky{
+    position:absolute;
+    width:100%;
+    vertical-align: top;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+/*=========================================================
+    왼쪽 잎사귀
+=========================================================*/
+.top_leaf01{
+    position:relative;
+    display:block;
+    width:63.4%;
+    z-index:2;
+}
+
+/*=========================================================
+    오른쪽 잎사귀
+=========================================================*/
+.top_leaf02{
+    position:absolute;
+    width:47%;
+    right:0;
+    top:0;
+    z-index:3;
+}
+
+
+/*=========================================================
+    타이틀 문구
+=========================================================*/
+.topTitle01{
+    position: relative;
+    width:100%;
+    max-width: 800px;
+    margin:-12% auto 0;
+    z-index:1;
+}
+
+.banner_h1{
+    font-size:60px;
+    color:#fff;
+    text-align: center;
+    margin-bottom:50px;
+}
+
+
+/*=========================================================
+    땅 & 사람들 일러스트
+=========================================================*/
+.topRound{
+    position: relative;
+    margin-top:-5%;
+}
+
+.top_knoll01{
+    position: absolute;
+    width:100%;
+    vertical-align: top;
+    left:0;
+    top:0;
+    z-index:1;
+}
+
+.top_knoll02{
+    position: relative;
+    width:100%;
+    vertical-align: top;
+    z-index: 1;
+}
+
+/*=========================================================
+    구역 링크로 설정 후 레이아웃 설정
+=========================================================*/
+.topNav{
+    position: relative;
+    margin:2% auto;
+    z-index: 4;
+}
+
+.topNav ul{
+    width:80%;
+    max-width: 1600px;
+    margin:0 auto;
+    display:flex;
+    flex-wrap: wrap;
+}
+
+.topNav li:first-child{
+    border-left:none;
+}
+
+.topNav li{
+    flex-basis: 12.5%;
+    border-left:1px solid rgba(255,255,255,0);
+}
+
+.mapNav{
+    display:block;
+    color:#fff;
+    font-size:16px;
+    line-height: 60px;
+    padding:0;
+    background:#215736;
+    border-bottom:3px solid #f3d950;
+    transition: all 0.15s ease-in-out;
+}
+
+.mapNav:hover{
+    background:#7ccacb;
+    transition: all 0.3s ease-in-out;
+}

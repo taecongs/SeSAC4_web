@@ -13,7 +13,7 @@ root.render(
 
     <br/>
 
-    <Main />
+    {/* <Main /> */}
   </React.StrictMode>
 );
 
