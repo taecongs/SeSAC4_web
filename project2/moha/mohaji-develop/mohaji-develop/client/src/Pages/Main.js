@@ -16,7 +16,7 @@ const Main = () => {
     return (
         <div>
             <Banner />
-            {/* <Banner2 timeline={tl} ease={ease} /> */}
+            <Banner2 timeline={tl} ease={ease} />
             {/* <Component /> */}
             {/* <Map /> */}
             {/* <ImageMap /> */}
