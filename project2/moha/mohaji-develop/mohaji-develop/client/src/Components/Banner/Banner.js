@@ -61,11 +61,11 @@ const Banner = () => {
                 </div>
             </div>
 
-            <div className="s02">
+            {/* <div className="s02">
                 <div className="w">
                     <div className="wave"></div>
                 </div>
-            </div>
+            </div> */}
         </section>
     );
 }

@@ -15,8 +15,8 @@ const Main = () => {
     let ease = Power3.easeOut;
     return (
         <div>
-            {/* <Banner /> */}
-            <Banner2 timeline={tl} ease={ease} />
+            <Banner />
+            {/* <Banner2 timeline={tl} ease={ease} /> */}
             {/* <Component /> */}
             {/* <Map /> */}
             {/* <ImageMap /> */}
