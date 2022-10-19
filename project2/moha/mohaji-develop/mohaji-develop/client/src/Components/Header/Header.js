@@ -20,7 +20,7 @@ const Header = () => {
 
                     <ul class="navbar_1 navbar_pc">
                         <li>
-                            <Link className='bt_line' to='/'> 서브 메뉴1 </Link>
+                            <Link className='bt_line' to='/sub'> 서브 메뉴1 </Link>
                         </li>
 
                         <li>
