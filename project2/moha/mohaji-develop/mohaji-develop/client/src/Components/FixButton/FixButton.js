@@ -10,7 +10,7 @@ const FixButton = () => {
     const [ScrollActive, setScrollActive] = useState(false);
 
     function handleScroll() {
-        if (ScrollY > 299) {
+        if (ScrollY > 200) {
             // scroll 값을 가져오기
             setScrollY(window.pageYOffset);
             setScrollActive(true);

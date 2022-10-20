@@ -104,28 +104,28 @@
     width: 100%;
     height: 100%;
     border-radius: 1000px;
-    animation: rotateOne 30s linear infinite;
+    // animation: rotateOne 30s linear infinite;
 }
 
 /* keyframe */
-@keyframes rotateOne {
-    0% {
-        transform: rotate(0deg);
-    }
+// @keyframes rotateOne {
+//     0% {
+//         transform: rotate(0deg);
+//     }
 
-    25% {
-        transform: rotate(45deg);
-    }
+//     25% {
+//         transform: rotate(45deg);
+//     }
 
-    50% {
-        transform: rotate(90deg);
-    }
+//     50% {
+//         transform: rotate(90deg);
+//     }
 
-    75% {
-        transform: rotate(125deg);
-    }
+//     75% {
+//         transform: rotate(125deg);
+//     }
 
-    100% {
-        transform: rotate(180deg);
-    }
-}
+//     100% {
+//         transform: rotate(180deg);
+//     }
+// }
