@@ -50,6 +50,9 @@ label,img,input,select,textarea,button{
 	vertical-align:middle;
 }
 
+html::-webkit-scrollbar {width: 8px;}
+html::-webkit-scrollbar-thumb {background-color: #2f3542; border-radius: 10px;}
+
 
 
 // 공통 색상 정의

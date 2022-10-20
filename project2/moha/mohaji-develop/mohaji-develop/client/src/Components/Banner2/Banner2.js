@@ -2,17 +2,21 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Banner2.scss';
 
-
+// Wave 근처에 있는 사람 일러스트 정의
 import banner_img1 from './img/s1_back01.png';
 import banner_img2 from './img/s1_back02.png';
 
+// 폭죽 일러스트 정의
 import fire_work1 from './img/firework01.png';
 import fire_work2 from './img/firework02.png';
 import fire_work3 from './img/firework03.png';
 import fire_work4 from './img/firework04.png';
 
 
-
+/*=================================================================
+✅ Main.js -> gsap 라이브러리 설치 및 호출 -> props 값으로 보냄
+✅ 순차적으로 애니메이션을 실행하기 위해 timeline 메서드를 사용
+=================================================================*/
 const Banner2 = ({ timeline, ease }) => {
     let image1 = useRef(null);
     let image2 = useRef(null);
@@ -50,26 +54,26 @@ const Banner2 = ({ timeline, ease }) => {
     // 텍스트 애니메이션 효과
     useEffect(() => {
         timeline.from(text1, 0.6, {
-            opacity : 0,
-            y:100,
-            stagger : {
-                amount : .4
+            opacity: 0,
+            y: 100,
+            stagger: {
+                amount: .4
             }
         });
 
         timeline.from(text2, 0.6, {
-            opacity : 0,
-            y:100,
-            stagger : {
-                amount : .4
+            opacity: 0,
+            y: 100,
+            stagger: {
+                amount: .4
             }
         });
 
         timeline.from(text3, 0.6, {
-            opacity : 0,
-            y:100,
-            stagger : {
-                amount : .4
+            opacity: 0,
+            y: 100,
+            stagger: {
+                amount: .4
             }
         });
     })
@@ -78,27 +82,31 @@ const Banner2 = ({ timeline, ease }) => {
     // 폭죽 애니메이션 효과
     useEffect(() => {
         timeline.from(fireWork1, {
-            scale : 0,
+            scale: 0,
             repeat: -1,
-            repeatDelay : 3,
+            repeatDelay: 5,
+            duration: .6,
         });
 
         timeline.from(fireWork2, {
-            scale : 0,
+            scale: 0,
             repeat: -1,
-            repeatDelay : 3,
+            repeatDelay: 5,
+            duration: .6,
         });
 
         timeline.from(fireWork3, {
-            scale : 0,
+            scale: 0,
             repeat: -1,
-            repeatDelay : 3,
+            repeatDelay: 5,
+            duration: .6,
         });
 
         timeline.from(fireWork4, {
-            scale : 0,
+            scale: 0,
             repeat: -1,
-            repeatDelay : 3,
+            repeatDelay: 5,
+            duration: .6,
         });
     })
 
@@ -117,16 +125,16 @@ const Banner2 = ({ timeline, ease }) => {
 
                 <div className="firework">
                     <div className="f_01 ff" ref={el => fireWork1 = el} style={{ transform: 'translate3d(0px, 0px, 0px) scale(0.9184, 0.918403)' }}>
-                        <img src={fire_work1} alt="" />
+                        <img className='fw_m' src={fire_work1} alt="" />
                     </div>
                     <div className="f_02 ff" ref={el => fireWork2 = el} style={{ transform: 'translate3d(0px, 0px, 0px) scale(0.9184, 0.918403)' }}>
-                        <img src={fire_work2} alt="" />
+                        <img className='fw_m' src={fire_work2} alt="" />
                     </div>
                     <div className="f_03 ff" ref={el => fireWork3 = el} style={{ transform: 'translate3d(0px, 0px, 0px) scale(0.9184, 0.918403)' }}>
-                        <img src={fire_work3} alt="" />
+                        <img className='fw_m' src={fire_work3} alt="" />
                     </div>
                     <div className="f_04 ff" ref={el => fireWork4 = el} style={{ transform: 'translate3d(0px, 0px, 0px) scale(0.9184, 0.918403)' }}>
-                        <img src={fire_work4} alt="" />
+                        <img className='fw_m' src={fire_work4} alt="" />
                     </div>
                 </div>
 
@@ -148,7 +156,9 @@ const Banner2 = ({ timeline, ease }) => {
 
 
                     <div className='im3' ref={el => text3 = el} style={{ opacity: 1, transform: 'translate(0px, 0px)' }}>
-                        <p><Link className='search_btn' to='/gang'>지역 검색</Link></p>
+                        <Link className='search_btn' to='/gang'>
+                            <span class="a_text">지역 검색</span>
+                        </Link>
                     </div>
                 </div>
 
@@ -160,6 +170,7 @@ const Banner2 = ({ timeline, ease }) => {
                     <div class="wave"></div>
                 </div>
             </div>
+
         </section>
     );
 }

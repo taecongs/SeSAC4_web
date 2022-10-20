@@ -8,6 +8,8 @@ import Banner from '../Components/Banner/Banner';
 
 import {gsap, Power3} from 'gsap';
 import Banner2 from '../Components/Banner2/Banner2';
+import App5 from '../Components/App5';
+import FixButton from '../Components/FixButton/FixButton';
 
 
 const Main = () => {
@@ -15,8 +17,10 @@ const Main = () => {
     let ease = Power3.easeOut;
     return (
         <div>
-            <Banner />
+            {/* <Banner /> */}
             <Banner2 timeline={tl} ease={ease} />
+            <FixButton />
+            <App5 />
             {/* <Component /> */}
             {/* <Map /> */}
             {/* <ImageMap /> */}
