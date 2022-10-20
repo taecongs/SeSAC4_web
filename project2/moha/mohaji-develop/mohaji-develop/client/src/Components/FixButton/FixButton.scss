@@ -25,7 +25,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    background-image: url(./img/ticket_circle.png);
+    background-image: url(./img/ticket_circle2.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -93,7 +93,7 @@
 }
 
 
-.onTicket .transBack{
+.onTicket .transBack {
     position: absolute;
     right: 0;
     top: 0;
@@ -104,28 +104,21 @@
     width: 100%;
     height: 100%;
     border-radius: 1000px;
-    // animation: rotateOne 30s linear infinite;
+    transform: rotate(180deg);
+    transition: all ease;
+
+
+    // animation: rotateOne 10s linear;
 }
+
 
 /* keyframe */
 // @keyframes rotateOne {
-//     0% {
+//     from {
 //         transform: rotate(0deg);
 //     }
 
-//     25% {
-//         transform: rotate(45deg);
-//     }
-
-//     50% {
-//         transform: rotate(90deg);
-//     }
-
-//     75% {
-//         transform: rotate(125deg);
-//     }
-
-//     100% {
-//         transform: rotate(180deg);
+//     to {
+//         transform: rotate(360deg);
 //     }
 // }

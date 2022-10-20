@@ -5,18 +5,22 @@ import './FixButton.scss';
 
 
 
+
 const FixButton = () => {
     const [ScrollY, setScrollY] = useState(0);
-    const [ScrollActive, setScrollActive] = useState(false);
+    const [scrollActive, setScrollActive] = useState(0);
 
     function handleScroll() {
-        if (ScrollY > 200) {
+        console.log('스크롤 이벤트');
+        if (ScrollY > 150 && !scrollActive) {
             // scroll 값을 가져오기
             setScrollY(window.pageYOffset);
             setScrollActive(true);
+            return;
         } else {
             setScrollY(window.pageYOffset);
             setScrollActive(false);
+            return;
         }
     }
 
@@ -33,11 +37,12 @@ const FixButton = () => {
         };
     });
 
+
     return (
         <div class="ont_plus">
             <Link className='fix_a one_a'>
                 <div className="onTicket">
-                    <div className={ScrollActive ? "transBack" : "back"} ></div>
+                    <div className={scrollActive ? "transBack" : "back"}></div>
                     <div className="circle">
                         <dl>
                             <dt>
@@ -53,7 +58,7 @@ const FixButton = () => {
 
             <Link className='fix_a two_a'>
                 <div className="onTicket">
-                    <div className={ScrollActive ? "transBack" : "back"}></div>
+                    <div></div>
                     <div className="circle">
                         <dl>
                             <dt>
