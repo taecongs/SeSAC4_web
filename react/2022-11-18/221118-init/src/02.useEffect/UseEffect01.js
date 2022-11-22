@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 
 const UseEffect01 = () => {
@@ -12,16 +12,16 @@ const UseEffect01 = () => {
     const handleInputChange = (e) => {
         setNames(e.target.value);
     }
- 
+
     // 매번 컴포넌트가 렌더링 될 때마다 실행한다.
     useEffect(() => {
         console.log('🌟렌더링🌟');
     });
 
-        // 가장 처음 렌더링 될 때 한 번만 실행한다.
-        useEffect(() => {
-            console.log('🌟렌더링 한 번만🌟');
-        }, []);
+    // 가장 처음 렌더링 될 때 한 번만 실행한다.
+    useEffect(() => {
+        console.log('🌟렌더링 한 번만🌟');
+    }, []);
 
 
     // 마운팅 + dependency array(count)가 변경 될 때 마다 실행
@@ -37,7 +37,7 @@ const UseEffect01 = () => {
         console.log('✅name 변화✅');
     }, [names]);
 
-    return(
+    return (
         <div>
             <h1>useEffect</h1>
 
