@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.2.0/redux.min.js"></script>
+    <title>Redux를 이용해 방명록 만들기</title>
+    <style>
+        #container {
+            width: 50%;
+        }
+
+        table thead td {
+            line-height: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        이름 : <input type='text' id="name">
+
+        <br />
+
+        내용 : <input type='text' id="content">
+
+        <button type="button" onclick="writeBtn();">작성</button>
+
+        <hr />
+
+
+        <div>
+            <table id="table" border="1" style="width:100%; text-align: center;">
+                <thead>
+                    <td>No.</td>
+                    <td>이름</td>
+                    <td>내용</td>
+                    <td>삭제</td>
+                </thead>
+
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function reducer(state, action) {
+            if (state === undefined) {
+                // state의 초기값 세팅
+                return { cnt: 0, boards: [] };
+            }
+
+            if (action.type === 'WRITE') {
+                // [...state.boards]
+
+                // 배열을 나열해서 복제하겠다.
+                // data = {no : 0, name : ~~~ , content : ~~~~}
+                let boards = Object.assign(state.boards);
+
+                boards.push(action.data);
+                return {
+                    cnt: state.cnt + 1,
+                    boards: boards
+                };
+            }
+
+            if(action.type === 'DELETE'){
+                
+            }
+        }
+
+
+        let store = Redux.createStore(reducer);
+
+
+
+        function writeBtn() {
+            let state = store.getState();
+
+            let data = {
+                no: state.cnt,
+                name: document.querySelector('#name').value,
+                content: document.querySelector('#content').value
+            }
+
+            store.dispatch( { type: 'WRITE', data: data } );
+        }
+
+
+
+        function deleteBoard(no) {
+            let state = store.getState();
+            store.dispatch( {type : 'DELETE', no : no} );
+            
+        }
+
+
+
+        function getData() {
+            let state = store.getState();
+            console.log(state);
+
+            let text = "";
+
+                for ( board of state.boards ) {
+                    text +=
+                        `<tr>
+                            <td>${board.no}</td>
+                            <td>${board.name}</td>
+                            <td>${board.content}</td>
+                            <td>
+                                <button type="button" onclick="deleteBoard(${board.no});">삭제</button>
+                            </td>
+                        </tr>`;
+                }
+
+                document.querySelector("#tbody").innerHTML = text;
+        }
+
+
+        store.subscribe(getData);
+        getData();
+    </script>
+</body>
+
+</html>
