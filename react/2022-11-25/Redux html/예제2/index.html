@@ -70,7 +70,12 @@
             }
 
             if(action.type === 'DELETE'){
-                
+                let boards = Object.assign(state.boards);
+                let filterBoards = boards.filter((list) => list.no !== action.no);
+                return {
+                    cnt : state.cnt,
+                    boards : filterBoards
+                };
             }
         }
 
