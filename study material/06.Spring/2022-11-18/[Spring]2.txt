@@ -1,0 +1,12 @@
+server.address=localhost
+server.port=8080 #서버는 8080 port를 이용
+
+#db_name에 로컬 DB명을 기입
+spring.datasource.url=jdbc:mysql://localhost:3306/db_name?useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+spring.datasource.username=root # 사용자 아이디
+spring.datasource.password=1234 # 사용자 비밀번호
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# mysql 연동
+spring.jpa.database=mysql
+spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
